@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - ScriptPro | Professional Screenwriting Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .feature-hero {
+            padding: 120px 0 80px;
+            background: var(--background-secondary);
+            text-align: center;
+        }
+
+        .feature-category {
+            margin-bottom: var(--space-6);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .feature-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .feature-info {
+            flex: 1;
+        }
+
+        .feature-visual {
+            flex: 1;
+            background: var(--background-card);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-visual img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .category-header {
+            border-left: 4px solid var(--color-primary);
+            padding-left: 20px;
+            margin-bottom: 40px;
+        }
+
+        .category-header h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+
+            .feature-item,
+            .feature-item:nth-child(even) {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-clapperboard"></i>
+                    <span>ScriptPro</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html" class="active">Features</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="darkModeToggle" class="btn-theme"><i class="fas fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-ghost">Login</a>
+                    <a href="register.html" class="btn btn-primary">Start Writing</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="feature-hero">
+            <div class="container">
+                <h1 class="reveal">Every Tool a Screenwriter Needs</h1>
+                <p class="section-subtitle reveal">From first draft to final revision, we've got you covered.</p>
+            </div>
+        </section>
+
+        <section class="features-detail section-padding">
+            <div class="container">
+                <!-- WRITING & FORMATTING -->
+                <div class="feature-category reveal">
+                    <div class="category-header">
+                        <h2>1. Writing & Formatting</h2>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-info">
+                            <h3>Auto-Formatting Engine</h3>
+                            <p>Type naturally and watch your screenplay format itself. Our intelligent engine recognizes
+                                scene headings (INT./EXT.), character names, dialogue, and transitions automatically.
+                            </p>
+                            <ul class="mt-4">
+                                <li><i class="fas fa-check text-burgundy"></i> Smart element detection</li>
+                                <li><i class="fas fa-check text-burgundy"></i> TAB-to-cycle navigation</li>
+                                <li><i class="fas fa-check text-burgundy"></i> Real-time character auto-complete</li>
+                            </ul>
+                        </div>
+                        <div class="feature-visual">
+                            <img src="https://images.unsplash.com/photo-1454165833222-d1d7d8b1ad67?auto=format&fit=crop&w=800&q=80"
+                                alt="Formatting">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLLABORATION -->
+                <div class="feature-category reveal">
+                    <div class="category-header">
+                        <h2>2. Collaboration</h2>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-info">
+                            <h3>Real-Time Co-Writing</h3>
+                            <p>Invite writing partners. See their cursors and edits live, like Google Docs. No more
+                                emailing versions back and forth or fighting over who has the "master" script.</p>
+                            <ul class="mt-4">
+                                <li><i class="fas fa-check text-burgundy"></i> Inline comment threads</li>
+                                <li><i class="fas fa-check text-burgundy"></i> Suggestion mode (Track Changes)</li>
+                                <li><i class="fas fa-check text-burgundy"></i> Shared project library</li>
+                            </ul>
+                        </div>
+                        <div class="feature-visual">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                                alt="Collaboration">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ANALYSIS -->
+                <div class="feature-category reveal">
+                    <div class="category-header">
+                        <h2>3. Analysis & Insights</h2>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-info">
+                            <h3>Pacing & Dialogue Distribution</h3>
+                            <p>Get a bird's eye view of your script's structure. Analyze how much screen time each
+                                character gets and identify where the pacing might be lagging.</p>
+                            <ul class="mt-4">
+                                <li><i class="fas fa-check text-burgundy"></i> Visual scene navigation</li>
+                                <li><i class="fas fa-check text-burgundy"></i> Dialogue vs Action ratio</li>
+                                <li><i class="fas fa-check text-burgundy"></i> Estimated runtime counter</li>
+                            </ul>
+                        </div>
+                        <div class="feature-visual">
+                            <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&w=800&q=80"
+                                alt="Analysis">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-bottom section-padding bg-alt text-center">
+            <div class="container reveal">
+                <h2>Ready to Start Your Masterpiece?</h2>
+                <div class="mt-8">
+                    <a href="register.html" class="btn btn-primary btn-lg">Start Free Trial</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 ScriptPro Inc. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

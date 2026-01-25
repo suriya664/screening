@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScriptPro - Write Your Award-Winning Screenplay</title>
+    <meta name="description" content="Professional screenplay writing software with industry-standard formatting, collaboration tools, and Hollywood-inspired design.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-clapperboard"></i>
+                    <span>ScriptPro</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="learning-hub.html">Learning Hub</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="darkModeToggle" class="btn-theme" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-ghost">Login</a>
+                    <a href="register.html" class="btn btn-primary">Start Writing Free</a>
+                    <button id="mobileMenuBtn" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-cinematic">
+            <div class="hero-bg-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text-area">
+                        <div class="typewriter-container">
+                            <span id="heroTypewriter" class="typewriter"></span>
+                        </div>
+                        <h1>Write Your Award-Winning <br><span class="text-gradient">Screenplay</span></h1>
+                        <p class="subheadline">Industry-standard formatting. Collaboration tools. Export to Final Draft.</p>
+                        <div class="hero-ctas">
+                            <a href="register.html" class="btn btn-secondary btn-lg">Start Writing Free</a>
+                            <a href="#" class="btn btn-ghost btn-lg"><i class="fas fa-play"></i> Watch Demo</a>
+                        </div>
+                        <div class="trust-badges">
+                            <span><i class="fas fa-award"></i> Used by Emmy winners</span>
+                            <span><i class="fas fa-check-circle"></i> Hollywood approved</span>
+                            <span><i class="fas fa-users"></i> 50,000+ screenwriters</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Showcase Grid -->
+        <section class="feature-showcase section-padding">
+            <div class="container text-center">
+                <h2 class="section-title reveal">Production-Ready Tools</h2>
+                <p class="section-subtitle reveal">Everything you need to go from logline to final shooting script.</p>
+                <div class="grid grid-3">
+                    <div class="card reveal">
+                        <div class="card-icon"><i class="fas fa-magic"></i></div>
+                        <h3>Auto-Formatting Magic</h3>
+                        <p>Type INT. or EXT. and watch your screenplay format itself. Industry-standard margins, proper character placement, and automatic numbering.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-icon"><i class="fas fa-user-group"></i></div>
+                        <h3>Character Intelligence</h3>
+                        <p>Track character arcs, dialogue distribution, and scene appearances. Get AI-powered suggestions for character consistency.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-icon"><i class="fas fa-users-viewfinder"></i></div>
+                        <h3>Collaboration Tools</h3>
+                        <p>Real-time co-writing with producers and writing partners. Comment threads, suggestion mode, and revision tracking.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-icon"><i class="fas fa-clock-rotate-left"></i></div>
+                        <h3>Revision Mode</h3>
+                        <p>Track changes with color-coded revision pages (blue, pink, yellow). Compare drafts side-by-side. Restore any version.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-icon"><i class="fas fa-file-export"></i></div>
+                        <h3>Export Everywhere</h3>
+                        <p>PDF, Final Draft (.fdx), Fountain, Movie Magic. Production-ready formatting every time you export.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-icon"><i class="fas fa-map-location-dot"></i></div>
+                        <h3>Beat Sheet & Outlining</h3>
+                        <p>Structure your screenplay with index cards, beat sheets, and three-act outlines. Never lose your narrative thread.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Film Strip Divider -->
+        <div class="film-strip">
+            <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+            <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+            <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+            <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+            <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+            <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+            <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+            <div class="film-hole"></div><div class="film-hole"></div><div class="film-hole"></div>
+        </div>
+
+        <!-- Live Demo Section -->
+        <section class="live-demo section-padding">
+            <div class="container">
+                <div class="demo-wrapper reveal">
+                    <div class="demo-sidebar">
+                        <h3>Interactive Editor</h3>
+                        <p>Experience the power of ScriptPro's auto-formatting engine right here.</p>
+                        <button class="btn btn-secondary">Try Demo Editor</button>
+                    </div>
+                    <div class="demo-editor-preview">
+                        <div class="editor-header">
+                            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                            <span class="title">My_Epic_Screenplay.fdx</span>
+                        </div>
+                        <div class="editor-content typeface-courier">
+                            <p class="scene-heading">INT. NOIR OFFICE - NIGHT</p>
+                            <p class="action">The neon sign outside flickers, casting a rhythmic red glow across the room.</p>
+                            <p class="character">DETECTIVE MARLOWE</p>
+                            <p class="dialogue">She was the kind of trouble that didn't just walk in. She made an entrance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Tiers -->
+        <section class="pricing section-padding bg-alt">
+            <div class="container text-center">
+                <h2 class="section-title reveal">Choose Your Stage</h2>
+                <div class="grid grid-3 pricing-cards">
+                    <div class="card reveal">
+                        <h4>Free</h4>
+                        <div class="price">$0<span>/mo</span></div>
+                        <ul class="features">
+                            <li>3 Active Projects</li>
+                            <li>Basic Formatting</li>
+                            <li>PDF Export</li>
+                            <li>Community Support</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-ghost">Start Free</a>
+                    </div>
+                    <div class="card featured reveal">
+                        <div class="badge">MOST POPULAR</div>
+                        <h4>Writer</h4>
+                        <div class="price">$12<span>/mo</span></div>
+                        <ul class="features">
+                            <li>Unlimited Projects</li>
+                            <li>All Formats</li>
+                            <li>Cloud Sync</li>
+                            <li>Collaboration</li>
+                            <li>Priority Support</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-secondary">Start Trial</a>
+                    </div>
+                    <div class="card reveal">
+                        <h4>Professional</h4>
+                        <div class="price">$29<span>/mo</span></div>
+                        <ul class="features">
+                            <li>Everything in Writer</li>
+                            <li>Final Draft Export</li>
+                            <li>Advanced Analytics</li>
+                            <li>API Access</li>
+                            <li>White-label</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-primary">Go Pro</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-clapperboard"></i>
+                        <span>ScriptPro</span>
+                    </a>
+                    <p>Elevating the art of screenwriting through professional tools and a cinematic experience.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="integrations.html">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="learning-hub.html">Learning Hub</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                        <li><a href="resources.html">Downloads</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ScriptPro Inc. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const typewriter = document.getElementById('heroTypewriter');
+            const text = "FADE IN:\nINT. COFFEE SHOP - DAY\nJOHN\nIs this seat taken?";
+            typeEffect(typewriter, text, 50);
+        });
+    </script>
+</body>
+</html>

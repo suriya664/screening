@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - ScriptPro | Plans for Every Screenwriter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+    <header>
+        <div class="container text-center">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-clapperboard"></i> <span>ScriptPro</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="pricing.html" class="active">Pricing</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="darkModeToggle" class="btn-theme"><i class="fas fa-moon"></i></button>
+                    <a href="register.html" class="btn btn-primary">Start Writing</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h1 class="reveal">Plans for Every Screenwriter</h1>
+                <p class="section-subtitle reveal">Toggle between monthly and annual billing to save 20%.</p>
+            </div>
+
+            <div class="pricing-cards grid grid-3 reveal">
+                <div class="card">
+                    <h4>Free</h4>
+                    <div class="price">$0<span>/forever</span></div>
+                    <ul class="features">
+                        <li>3 Active Projects</li>
+                        <li>Basic Auto-Formatting</li>
+                        <li>Scene Navigator</li>
+                        <li>PDF Export (Unlocked)</li>
+                        <li>Community Forums</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-ghost mt-auto">Start Free</a>
+                </div>
+                <div class="card featured">
+                    <div class="badge">MOST POPULAR</div>
+                    <h4>Writer</h4>
+                    <div class="price">$12<span>/mo</span></div>
+                    <ul class="features">
+                        <li>Unlimited Projects</li>
+                        <li>Cloud Sync</li>
+                        <li>Collaboration (5 users)</li>
+                        <li>Version History (90 days)</li>
+                        <li>Revision Mode</li>
+                        <li>Character Analytics</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-secondary mt-auto">Start 14-Day Trial</a>
+                </div>
+                <div class="card">
+                    <h4>Professional</h4>
+                    <div class="price">$29<span>/mo</span></div>
+                    <ul class="features">
+                        <li>Everything in Writer</li>
+                        <li>Final Draft (.fdx) Export</li>
+                        <li>Unlimited Collaborators</li>
+                        <li>Advanced Reports</li>
+                        <li>API Access</li>
+                        <li>White-label Exports</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-primary mt-auto">Go Professional</a>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="comparison-table mt-20 reveal">
+                <h2 class="text-center mb-12">Full Feature Comparison</h2>
+                <div class="card">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b">
+                                <th class="p-4">Feature</th>
+                                <th class="p-4">Free</th>
+                                <th class="p-4">Writer</th>
+                                <th class="p-4">Professional</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="p-4">Active Projects</td>
+                                <td class="p-4">3</td>
+                                <td class="p-4">Unlimited</td>
+                                <td class="p-4">Unlimited</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-4">Auto-Formatting</td>
+                                <td class="p-4 text-success">✓</td>
+                                <td class="p-4 text-success">✓</td>
+                                <td class="p-4 text-success">✓</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-4">Collaboration</td>
+                                <td class="p-4 text-error">✗</td>
+                                <td class="p-4">Up to 5</td>
+                                <td class="p-4">Unlimited</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-4">Final Draft Export</td>
+                                <td class="p-4 text-error">✗</td>
+                                <td class="p-4 text-error">✗</td>
+                                <td class="p-4 text-success">✓</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 ScriptPro Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

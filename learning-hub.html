@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Hub - ScriptPro | Screenwriting Education</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .hub-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .article-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .article-image {
+            height: 180px;
+            background: var(--background-secondary);
+            overflow: hidden;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+
+        .article-footer {
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 992px) {
+            .hub-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hub-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-clapperboard"></i> <span>ScriptPro</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="learning-hub.html" class="active">Learning Hub</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="darkModeToggle" class="btn-theme"><i class="fas fa-moon"></i></button>
+                    <a href="register.html" class="btn btn-primary">Start Writing</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h1 class="reveal">Master the Craft of Screenwriting</h1>
+                <p class="section-subtitle reveal">Tutorials, guides, and resources from industry professionals.</p>
+            </div>
+
+            <h2 class="reveal mb-8">Featured Tutorials</h2>
+            <div class="hub-grid reveal">
+                <article class="card article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1494801819652-1ca9fe1315ce?auto=format&fit=crop&w=400&q=80"
+                            alt="Formatting">
+                    </div>
+                    <div class="article-content">
+                        <span class="tag">Formatting</span>
+                        <h3>Screenplay Formatting 101</h3>
+                        <p>Learn the industry-standard rules every screenwriter must know.</p>
+                        <a href="#" class="mt-auto text-burgundy font-bold">Watch Video →</a>
+                    </div>
+                    <div class="article-footer">15:30 Min • Beginner</div>
+                </article>
+
+                <article class="card article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=400&q=80"
+                            alt="Dialogue">
+                    </div>
+                    <div class="article-content">
+                        <span class="tag">Craft</span>
+                        <h3>Writing Compelling Dialogue</h3>
+                        <p>Techniques for creating authentic character voices and subtext.</p>
+                        <a href="#" class="mt-auto text-burgundy font-bold">Watch Video →</a>
+                    </div>
+                    <div class="article-footer">22:45 Min • Intermediate</div>
+                </article>
+
+                <article class="card article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=400&q=80"
+                            alt="Structure">
+                    </div>
+                    <div class="article-content">
+                        <span class="tag">Structure</span>
+                        <h3>Three-Act Structure Explained</h3>
+                        <p>Break down the classic storytelling bones using famous films.</p>
+                        <a href="#" class="mt-auto text-burgundy font-bold">Watch Video →</a>
+                    </div>
+                    <div class="article-footer">18:12 Min • Beginner</div>
+                </article>
+            </div>
+
+            <div class="cta-banner mt-20 p-8 card reveal bg-alt text-center">
+                <h2>Join Our Newsletter</h2>
+                <p>Get weekly screenwriting tips and templates delivered to your inbox.</p>
+                <form class="mt-8 flex justify-center gap-4">
+                    <input type="email" placeholder="you@example.com" class="input-field" style="max-width: 400px;">
+                    <button class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container pb-12">
+            <div class="footer-bottom">
+                <p>&copy; 2026 ScriptPro Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

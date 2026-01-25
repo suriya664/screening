@@ -1,0 +1,61 @@
+/* Screenplay-specific styles for demo and dashboard */
+.typeface-courier {
+    font-family: var(--font-screenplay);
+}
+
+.scene-heading {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.action {
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.character {
+    text-align: center;
+    width: 50%;
+    margin: 20px auto 5px;
+    text-transform: uppercase;
+}
+
+.dialogue {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto 15px;
+    line-height: 1.1;
+}
+
+.parenthetical {
+    text-align: center;
+    width: 40%;
+    margin: 0 auto 5px;
+    font-size: 0.9em;
+}
+
+.transition {
+    text-align: right;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Base formatting sizes */
+.editor-content {
+    background: white;
+    color: black;
+    padding: 1in;
+    min-height: 11in;
+    width: 8.5in;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark .editor-content {
+    background: #fdfdfd;
+    /* Keep screenplay paper light even in dark mode UI usually, or themed */
+    color: #1a1a1a;
+}

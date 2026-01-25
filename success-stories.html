@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories - ScriptPro | From Draft to Screen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .case-study {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .case-study:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .cs-image {
+            flex: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cs-image img {
+            width: 100%;
+            display: block;
+        }
+
+        .cs-content {
+            flex: 1;
+        }
+
+        .cs-quote {
+            font-size: 1.5rem;
+            font-family: var(--font-heading);
+            color: var(--color-primary);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .cs-author {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .cs-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-val {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-secondary);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 920px) {
+
+            .case-study,
+            .case-study:nth-child(even) {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-clapperboard"></i> <span>ScriptPro</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="success-stories.html" class="active">Success Stories</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="darkModeToggle" class="btn-theme"><i class="fas fa-moon"></i></button>
+                    <a href="register.html" class="btn btn-primary">Start Writing</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h1 class="reveal">From First Draft to Screen</h1>
+                <p class="section-subtitle reveal">Real screenwriters. Real success stories.</p>
+            </div>
+
+            <div class="case-studies mt-20">
+                <div class="case-study reveal">
+                    <div class="cs-image">
+                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80"
+                            alt="Netflix Show">
+                    </div>
+                    <div class="cs-content">
+                        <p class="cs-quote">"This software helped me finish my pilot in 2 weeks. The collaboration tools
+                            let my partner and I work across coasts seamlessly."</p>
+                        <p class="cs-author">Sarah Mitchell</p>
+                        <p class="text-muted">Emmy-nominated Writer, "The Last Hour"</p>
+                        <div class="cs-stats">
+                            <div class="stat-item">
+                                <div class="stat-val">3</div>
+                                <div class="stat-label">Weeks to Draft</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-val">Selected</div>
+                                <div class="stat-label">Netflix Pilot</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study reveal">
+                    <div class="cs-image">
+                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80"
+                            alt="Sundance Film">
+                    </div>
+                    <div class="cs-content">
+                        <p class="cs-quote">"The revision mode was crucial during feedback from my producer. We went
+                            through 8 drafts effortlessly."</p>
+                        <p class="cs-author">Marcus Chen</p>
+                        <p class="text-muted">Writer/Director, "Echoes in Silence"</p>
+                        <div class="cs-stats">
+                            <div class="stat-item">
+                                <div class="stat-val">8</div>
+                                <div class="stat-label">Drafts Tracks</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-val">Premiered</div>
+                                <div class="stat-label">Sundance 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-20">
+        <div class="container pb-12">
+            <div class="footer-bottom">
+                <p>&copy; 2026 ScriptPro Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

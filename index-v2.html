@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScriptPro - Modern Screenwriting Interface</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <style>
+        .split-hero {
+            display: flex;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .hero-left {
+            flex: 1;
+            background: var(--background-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-5);
+        }
+
+        .hero-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: var(--space-6);
+            background-color: var(--background-primary);
+        }
+
+        .mockup-window {
+            width: 100%;
+            max-width: 600px;
+            background: #252525;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid #444;
+        }
+
+        .window-header {
+            background: #1a1a1a;
+            padding: 10px 15px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .red {
+            background: #ff5f56;
+        }
+
+        .yellow {
+            background: #ffbd2e;
+        }
+
+        .green {
+            background: #27c93f;
+        }
+
+        .window-body {
+            height: 400px;
+            padding: 30px;
+            font-family: var(--font-screenplay);
+            color: #ccc;
+            overflow: hidden;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background: var(--color-secondary);
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        .hero-benefit {
+            margin-bottom: var(--space-4);
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.6s ease;
+        }
+
+        .hero-benefit.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .format-switcher-tabs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .tab-btn {
+            background: none;
+            padding: 10px 20px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab-btn.active {
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
+        }
+
+        @media (max-width: 992px) {
+            .split-hero {
+                flex-direction: column;
+            }
+
+            .hero-left {
+                order: 2;
+                min-height: 50vh;
+            }
+
+            .hero-right {
+                order: 1;
+                min-height: 50vh;
+                padding-top: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-clapperboard"></i>
+                    <span>ScriptPro</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home v1</a></li>
+                    <li><a href="index-v2.html" class="active">Home v2</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="darkModeToggle" class="btn-theme"><i class="fas fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-ghost">Login</a>
+                    <a href="register.html" class="btn btn-primary">Start Writing</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="split-hero">
+            <div class="hero-left">
+                <div class="mockup-window mockup-3d">
+                    <div class="mockup-inner">
+                        <div class="window-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="window-body" id="heroEditorText">
+                            <!-- Typing simulation will go here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <h1 class="reveal">Focus on the Story. <br>We'll handle the <span class="text-gradient">Format.</span>
+                </h1>
+                <div class="benefits-list mt-8">
+                    <div class="hero-benefit" style="transition-delay: 0.1s;">
+                        <h3><i class="fas fa-bolt text-burgundy"></i> Write Faster</h3>
+                        <p>Auto-complete characters and scene headings in real-time.</p>
+                    </div>
+                    <div class="hero-benefit" style="transition-delay: 0.2s;">
+                        <h3><i class="fas fa-check-double text-burgundy"></i> Format Perfect</h3>
+                        <p>Industry standards built into every line you type.</p>
+                    </div>
+                    <div class="hero-benefit" style="transition-delay: 0.3s;">
+                        <h3><i class="fas fa-users text-burgundy"></i> Collaborate Live</h3>
+                        <p>Real-time co-writing with zero lag or version conflicts.</p>
+                    </div>
+                </div>
+                <div class="hero-ctas mt-8 reveal">
+                    <a href="register.html" class="btn btn-primary btn-lg">Get Started Free</a>
+                    <p class="mt-4 text-muted">Join 15,000+ screenwriters today.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Format Switcher -->
+        <section class="format-switcher section-padding container">
+            <div class="text-center mb-12">
+                <h2 class="section-title reveal">One Tool for Every Stage</h2>
+            </div>
+            <div class="format-switcher-tabs reveal justify-center">
+                <button class="tab-btn active">Film</button>
+                <button class="tab-btn">TV Pilot</button>
+                <button class="tab-btn">Stage Play</button>
+                <button class="tab-btn">Web Series</button>
+            </div>
+            <div class="format-preview card reveal">
+                <div class="grid grid-2 items-center">
+                    <div class="preview-text p-8">
+                        <h3 id="format-title">Feature Film Format</h3>
+                        <p id="format-desc" class="mb-6">The standard 12pt Courier structure used by all major studios.
+                            Includes proper scene headings, dialogue spacing, and transition alignment.</p>
+                        <ul class="feature-list" id="format-list">
+                            <li><i class="fas fa-check"></i> Standard Courier Prime Font</li>
+                            <li><i class="fas fa-check"></i> 1.5" Left Margin for binding</li>
+                            <li><i class="fas fa-check"></i> 1 Page = 1 Minute of screen time</li>
+                        </ul>
+                    </div>
+                    <div class="preview-image">
+                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80"
+                            alt="Screenplay Page" class="rounded-lg shadow-md">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section class="comparison section-padding bg-alt">
+            <div class="container">
+                <h2 class="section-title text-center reveal">How We Compare</h2>
+                <div class="comparison-table-wrapper card mt-12 reveal">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b">
+                                <th class="p-4">Feature</th>
+                                <th class="p-4 text-burgundy">ScriptPro</th>
+                                <th class="p-4">Final Draft</th>
+                                <th class="p-4">Celtx</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="p-4">Real-time Collaboration</td>
+                                <td class="p-4 text-success"><i class="fas fa-check"></i> Included</td>
+                                <td class="p-4 text-error"><i class="fas fa-times"></i> Add-on</td>
+                                <td class="p-4">Limited</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-4">Cloud Auto-Sync</td>
+                                <td class="p-4 text-success"><i class="fas fa-check"></i> Always</td>
+                                <td class="p-4">Paid Sync</td>
+                                <td class="p-4">Standard</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-4">Industry Standard PDF</td>
+                                <td class="p-4 text-success"><i class="fas fa-check"></i> Yes</td>
+                                <td class="p-4 text-success"><i class="fas fa-check"></i> Yes</td>
+                                <td class="p-4 text-success"><i class="fas fa-check"></i> Yes</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4">Price</td>
+                                <td class="p-4 font-bold text-burgundy">$12/mo</td>
+                                <td class="p-4">$199 once</td>
+                                <td class="p-4">$20/mo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-20">
+        <div class="container pb-12">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-clapperboard"></i>
+                        <span>ScriptPro</span>
+                    </a>
+                    <p class="mt-4">The modern standard for screenplay writing.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Updated</h4>
+                    <form class="flex gap-2">
+                        <input type="email" placeholder="Email" class="input-field">
+                        <button class="btn btn-primary">Join</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const editorText = document.getElementById('heroEditorText');
+            const lines = [
+                '<p class="scene-heading">EXT. MOUNTAIN SUMMIT - DAY</p>',
+                '<p class="action">The wind howls. MARK stands at the edge.</p>',
+                '<p class="character">MARK</p>',
+                '<p class="dialogue">This is it. The end of the line.</p>'
+            ];
+
+            let curLine = 0;
+            const typeLines = () => {
+                if (curLine < lines.length) {
+                    editorText.innerHTML += lines[curLine];
+                    curLine++;
+                    setTimeout(typeLines, 1500);
+                }
+            };
+            setTimeout(typeLines, 1000);
+
+            // Animate benefits
+            const benefits = document.querySelectorAll('.hero-benefit');
+            setTimeout(() => {
+                benefits.forEach(b => b.classList.add('active'));
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrations - ScriptPro | Works With Your Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .integ-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .integ-card {
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .integ-card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--color-primary);
+        }
+
+        .integ-card h4 {
+            margin-top: 10px;
+        }
+
+        @media (max-width: 920px) {
+            .integ-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .integ-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-clapperboard"></i> <span>ScriptPro</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="integrations.html" class="active">Integrations</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="darkModeToggle" class="btn-theme"><i class="fas fa-moon"></i></button>
+                    <a href="register.html" class="btn btn-primary">Start Writing</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h1 class="reveal">Works With Your Favorite Tools</h1>
+                <p class="section-subtitle reveal">Import, export, and sync across the entire screenwriting ecosystem.
+                </p>
+            </div>
+
+            <div class="integ-grid mt-12 reveal">
+                <div class="card integ-card">
+                    <i class="fas fa-file-export"></i>
+                    <h4>Final Draft</h4>
+                    <p class="text-sm text-muted">Full .fdx compatibility</p>
+                </div>
+                <div class="card integ-card">
+                    <i class="fab fa-google-drive"></i>
+                    <h4>Google Drive</h4>
+                    <p class="text-sm text-muted">Cloud Backup</p>
+                </div>
+                <div class="card integ-card">
+                    <i class="fab fa-dropbox"></i>
+                    <h4>Dropbox</h4>
+                    <p class="text-sm text-muted">Sync Everywhere</p>
+                </div>
+                <div class="card integ-card">
+                    <i class="fab fa-slack"></i>
+                    <h4>Slack</h4>
+                    <p class="text-sm text-muted">Team Notifications</p>
+                </div>
+                <div class="card integ-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h4>PDF</h4>
+                    <p class="text-sm text-muted">Standard Exports</p>
+                </div>
+                <div class="card integ-card">
+                    <i class="fab fa-trello"></i>
+                    <h4>Trello</h4>
+                    <p class="text-sm text-muted">Project Management</p>
+                </div>
+                <div class="card integ-card">
+                    <i class="fas fa-pen-nib"></i>
+                    <h4>Highland</h4>
+                    <p class="text-sm text-muted">Fountain Support</p>
+                </div>
+                <div class="card integ-card">
+                    <i class="fas fa-cloud"></i>
+                    <h4>Cloudinary</h4>
+                    <p class="text-sm text-muted">Image Hosting</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container pb-12">
+            <div class="footer-bottom">
+                <p>&copy; 2026 ScriptPro Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
