@@ -84,7 +84,7 @@
                 </a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="dashboard.html">home 2</a></li>
+                    <li><a href="index-v2.html">home 2</a></li>
                     <li><a href="features.html">Features</a></li>
                     <li><a href="templates.html">Templates</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
@@ -93,6 +93,7 @@
                 </ul>
                 <div class="nav-actions">
                     <button id="darkModeToggle" class="btn-theme"><i class="fas fa-moon"></i></button>
+                    <button id="mobileMenuBtn" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
                     <a href="register.html" class="btn btn-primary">Start Writing</a>
                 </div>
             </nav>
@@ -110,42 +111,48 @@
             <div class="hub-grid reveal">
                 <article class="card article-card">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1494801819652-1ca9fe1315ce?auto=format&fit=crop&w=400&q=80"
+                        <img src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=600&q=80"
                             alt="Formatting">
                     </div>
                     <div class="article-content">
                         <span class="tag">Formatting</span>
                         <h3>Screenplay Formatting 101</h3>
-                        <p>Learn the industry-standard rules every screenwriter must know.</p>
-                        <a href="#" class="mt-auto text-burgundy font-bold">Watch Video →</a>
+                        <p class="mb-4">Learn the industry-standard rules every screenwriter must know.</p>
+                        <div class="text-center mt-auto">
+                            <a href="#" class="btn btn-ghost btn-sm">Watch Video →</a>
+                        </div>
                     </div>
                     <div class="article-footer">15:30 Min • Beginner</div>
                 </article>
 
                 <article class="card article-card">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&w=400&q=80"
+                        <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=600&q=80"
                             alt="Dialogue">
                     </div>
                     <div class="article-content">
                         <span class="tag">Craft</span>
                         <h3>Writing Compelling Dialogue</h3>
-                        <p>Techniques for creating authentic character voices and subtext.</p>
-                        <a href="#" class="mt-auto text-burgundy font-bold">Watch Video →</a>
+                        <p class="mb-4">Techniques for creating authentic character voices and subtext.</p>
+                        <div class="text-center mt-auto">
+                            <a href="#" class="btn btn-ghost btn-sm">Watch Video →</a>
+                        </div>
                     </div>
                     <div class="article-footer">22:45 Min • Intermediate</div>
                 </article>
 
                 <article class="card article-card">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=400&q=80"
+                        <img src="https://images.unsplash.com/photo-1485644014695-244b2006d3be?auto=format&fit=crop&w=600&q=80"
                             alt="Structure">
                     </div>
                     <div class="article-content">
                         <span class="tag">Structure</span>
                         <h3>Three-Act Structure Explained</h3>
-                        <p>Break down the classic storytelling bones using famous films.</p>
-                        <a href="#" class="mt-auto text-burgundy font-bold">Watch Video →</a>
+                        <p class="mb-4">Break down the classic storytelling bones using famous films.</p>
+                        <div class="text-center mt-auto">
+                            <a href="#" class="btn btn-ghost btn-sm">Watch Video →</a>
+                        </div>
                     </div>
                     <div class="article-footer">18:12 Min • Beginner</div>
                 </article>
@@ -163,9 +170,56 @@
     </main>
 
     <footer>
-        <div class="container pb-12">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-clapperboard"></i>
+                        <span>ScriptPro</span>
+                    </a>
+                    <p>Elevating the art of screenwriting through professional tools and a cinematic experience.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="integrations.html">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="learning-hub.html">Learning Hub</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                        <li><a href="resources.html">Downloads</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 ScriptPro Inc.</p>
+                <p>&copy; 2026 ScriptPro Inc. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Cookies</a>
+                </div>
             </div>
         </div>
     </footer>

@@ -92,7 +92,7 @@
                 </a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="dashboard.html">home 2</a></li>
+                    <li><a href="index-v2.html">home 2</a></li>
                     <li><a href="features.html">Features</a></li>
                     <li><a href="templates.html" class="active">Templates</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
@@ -101,6 +101,7 @@
                 </ul>
                 <div class="nav-actions">
                     <button id="darkModeToggle" class="btn-theme"><i class="fas fa-moon"></i></button>
+                    <button id="mobileMenuBtn" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
                     <a href="register.html" class="btn btn-primary">Start Writing</a>
                 </div>
             </nav>
@@ -108,7 +109,7 @@
     </header>
 
     <main>
-        <section class="section-padding container">
+        <section class="section-padding container template-hero">
             <div class="text-center">
                 <h1 class="reveal">Screenplay Templates for Every Format</h1>
                 <p class="section-subtitle reveal">Start with professional structures. Customize to fit your story.</p>
@@ -161,6 +162,10 @@
                 <h2 class="reveal">TV & Streaming</h2>
                 <div class="template-grid reveal">
                     <div class="card template-card">
+                        <div class="template-preview">
+                            <img src="https://images.unsplash.com/photo-1598897349489-447a9744c9a4?auto=format&fit=crop&w=400&q=80"
+                                alt="1-Hour Drama">
+                        </div>
                         <div class="template-content">
                             <span class="template-tag">1-Hour Drama</span>
                             <h3>Network TV Pilot</h3>
@@ -169,6 +174,10 @@
                         </div>
                     </div>
                     <div class="card template-card">
+                        <div class="template-preview">
+                            <img src="https://images.unsplash.com/photo-1550948390-6eb7fa773072?auto=format&fit=crop&w=400&q=80"
+                                alt="Sitcom">
+                        </div>
                         <div class="template-content">
                             <span class="template-tag">30-Min Comedy</span>
                             <h3>Sitcom Pilot</h3>
@@ -181,10 +190,57 @@
         </section>
     </main>
 
-    <footer class="mt-20">
-        <div class="container pb-12">
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-clapperboard"></i>
+                        <span>ScriptPro</span>
+                    </a>
+                    <p>Elevating the art of screenwriting through professional tools and a cinematic experience.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="integrations.html">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="learning-hub.html">Learning Hub</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                        <li><a href="resources.html">Downloads</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 ScriptPro Inc. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Cookies</a>
+                </div>
             </div>
         </div>
     </footer>

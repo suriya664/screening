@@ -8,146 +8,63 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        body {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-            margin: 0;
-            overflow: hidden;
-        }
-
-        .auth-card {
-            width: 100%;
-            max-width: 450px;
-            padding: 50px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-
-        .auth-logo {
-            font-size: 2.5rem;
-            color: var(--color-secondary);
-            margin-bottom: 30px;
-            display: inline-block;
-        }
-
-        .form-group {
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            color: #ccc;
-        }
-
-        .auth-input {
-            width: 100%;
-            padding: 14px 20px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid #444;
-            border-radius: 8px;
-            color: #fff;
-            font-size: 1rem;
-        }
-
-        .auth-input:focus {
-            border-color: var(--color-secondary);
-            outline: none;
-        }
-
-        .social-auth {
-            margin: 30px 0;
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn-social {
-            flex: 1;
-            padding: 12px;
-            background: #fff;
-            color: #000;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .divider {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin: 20px 0;
-            color: #666;
-            font-size: 0.8rem;
-        }
-
-        .divider div {
-            flex: 1;
-            height: 1px;
-            background: #333;
-        }
-
-        p {
-            color: #888;
-            font-size: 0.9rem;
-            margin-top: 20px;
-        }
-
-        a {
-            color: var(--color-secondary);
-            font-weight: 600;
-        }
-    </style>
+    <link rel="stylesheet" href="css/animations.css">
 </head>
 
-<body>
-    <div class="auth-card">
-        <a href="index.html" class="auth-logo"><i class="fas fa-clapperboard"></i></a>
-        <h2 style="color: #fff; margin-bottom: 30px;">Welcome Back</h2>
+<body class="auth-page">
+    <header>
+        <div class="container">
+            <nav style="height: 60px;">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-clapperboard"></i>
+                    <span>ScriptPro</span>
+                </a>
+                <div class="nav-actions">
+                    <button id="darkModeToggle" class="btn-theme" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="register.html" class="btn btn-ghost btn-sm">Sign Up</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-        <form action="dashboard.html">
+    <div class="auth-card reveal">
+        <h2 class="mb-6">Welcome Back</h2>
+        <p class="mb-12">Enter your credentials to access your scripts.</p>
+
+        <form action="dashboard.html" class="auth-form">
             <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" class="auth-input" placeholder="name@company.com" required>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="input-field" placeholder="name@company.com" required>
             </div>
             <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="auth-input" placeholder="••••••••" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" class="input-field" placeholder="••••••••" required>
             </div>
-            <div style="text-align: right; margin-bottom: 20px;">
-                <a href="#" style="font-size: 0.8rem;">Forgot password?</a>
+
+            <div class="remember-me">
+                <input type="checkbox" id="remember">
+                <label for="remember" style="margin-bottom: 0;">Remember me</label>
             </div>
-            <button type="submit" class="btn btn-secondary w-full" style="padding: 15px;">Sign In</button>
+
+            <button type="submit" class="btn btn-highlight w-full mb-6">Sign In</button>
+
+            <div style="text-align: center; margin-bottom: 20px;">
+                <a href="#" class="text-burgundy font-bold">Forgot password?</a>
+            </div>
         </form>
 
-        <div class="divider">
-            <div></div> OR <div></div>
-        </div>
+        <div class="film-strip" style="height: 2px; background: var(--border-color); margin: 30px 0;"></div>
 
-        <div class="social-auth">
-            <button class="btn-social"><i class="fab fa-google"></i> Google</button>
-            <button class="btn-social"><i class="fab fa-apple"></i> Apple</button>
-        </div>
-
-        <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+        <p>Don't have an account? <a href="register.html" class="text-burgundy font-bold">Sign Up Free</a></p>
     </div>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>

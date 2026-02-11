@@ -15,9 +15,21 @@
     <link rel="stylesheet" href="css/animations.css">
     <style>
         .feature-hero {
-            padding: 120px 0 80px;
-            background: var(--background-secondary);
+            padding: 150px 0 100px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
             text-align: center;
+        }
+
+        .feature-hero h1 {
+            color: #fff;
+            font-size: 3.5rem;
+        }
+
+        .feature-hero .section-subtitle {
+            color: #ccc;
         }
 
         .feature-category {
@@ -84,7 +96,7 @@
                 </a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="dashboard.html">home 2</a></li>
+                    <li><a href="index-v2.html">home 2</a></li>
                     <li><a href="features.html" class="active">Features</a></li>
                     <li><a href="templates.html">Templates</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
@@ -93,6 +105,7 @@
                 </ul>
                 <div class="nav-actions">
                     <button id="darkModeToggle" class="btn-theme"><i class="fas fa-moon"></i></button>
+                    <button id="mobileMenuBtn" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
                     <a href="register.html" class="btn btn-primary">Start Writing</a>
                 </div>
             </nav>
@@ -193,11 +206,54 @@
 
     <footer>
         <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-clapperboard"></i>
+                        <span>ScriptPro</span>
+                    </a>
+                    <p>Elevating the art of screenwriting through professional tools and a cinematic experience.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="integrations.html">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="learning-hub.html">Learning Hub</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                        <li><a href="resources.html">Downloads</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 ScriptPro Inc. All rights reserved.</p>
                 <div class="footer-legal">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Cookies</a>
                 </div>
             </div>
         </div>
