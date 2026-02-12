@@ -13,27 +13,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <body class="auth-page">
-    <header>
-        <div class="container">
-            <nav style="height: 60px;">
-                <a href="index.html" class="logo">
-                    <i class="fas fa-clapperboard"></i>
-                    <span>ScriptPro</span>
-                </a>
-                <div class="nav-actions">
-                    <button id="darkModeToggle" class="btn-theme" title="Toggle Theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
-                </div>
-            </nav>
-        </div>
-    </header>
-
     <div class="auth-card reveal">
+        <div class="logo" style="text-align: center; margin-bottom: 20px;">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-clapperboard"></i>
+                <span>ScriptPro</span>
+            </a>
+        </div>
         <h2 class="mb-6">Create Account</h2>
         <p class="mb-12">Join 50,000+ writers and start your masterpiece.</p>
 
@@ -48,10 +40,14 @@
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" class="input-field" placeholder="Min. 8 characters" required>
+                <input type="password" id="password" class="input-field" placeholder="••••••" required>
             </div>
 
-            <button type="submit" class="btn btn-highlight w-full mb-6">Get Started Free</button>
+            <button type="submit" class="btn btn-highlight w-full mb-6">Sign Up Free</button>
+
+            <div style="text-align: center; margin-top: 20px;">
+                Already have an account? <a href="login.html" class="text-burgundy font-bold">Log In</a>
+            </div>
         </form>
 
         <div class="film-strip" style="height: 2px; background: var(--border-color); margin: 30px 0;"></div>

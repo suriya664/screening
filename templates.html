@@ -13,28 +13,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <style>
+        /* Template Grid - Keep 3/3 Layout */
         .template-grid {
+            display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             margin-top: 50px;
+            justify-items: center;
         }
-
+        
         .template-card {
             padding: 0;
             overflow: hidden;
             height: 100%;
             display: flex;
             flex-direction: column;
+            width: 100%;
+            max-width: 400px;
         }
-
+        
         .template-preview {
-            height: 200px;
-            background: #eee;
+            height: 220px;
+            background: linear-gradient(135deg, var(--background-secondary), var(--background-card));
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-
+        
         .template-preview img {
             width: 100%;
             height: 100%;
@@ -42,18 +53,19 @@
             opacity: 0.7;
             transition: transform 0.3s;
         }
-
+        
         .template-card:hover .template-preview img {
             transform: scale(1.05);
         }
-
+        
         .template-content {
             padding: 25px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
+            text-align: center;
         }
-
+        
         .template-tag {
             background: var(--background-secondary);
             padding: 4px 12px;
@@ -64,20 +76,40 @@
             margin-bottom: 10px;
             display: inline-block;
         }
-
+        
         .dark .template-preview {
             background: #333;
         }
-
-        @media (max-width: 992px) {
+        
+        /* Responsive - Keep 3/3 as long as possible */
+        @media (max-width: 1200px) {
             .template-grid {
-                grid-template-columns: 1fr 1fr;
+                gap: 25px;
             }
         }
-
+        
+        @media (max-width: 992px) {
+            .template-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .template-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .template-card {
+                max-width: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .template-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
         }
     </style>
@@ -91,49 +123,50 @@
                     <i class="fas fa-clapperboard"></i> <span>ScriptPro</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index-v2.html">home 2</a></li>
+                    <li><a href="index.html">ScriptPro</a></li>
+                    <li><a href="index-v2.html">Home</a></li>
                     <li><a href="features.html">Features</a></li>
                     <li><a href="templates.html" class="active">Templates</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="learning-hub.html">Learning Hub</a></li>
                     <li><a href="dashboard.html">Dashboard</a></li>
                 </ul>
                 <div class="nav-actions">
                     <button id="darkModeToggle" class="btn-theme"><i class="fas fa-moon"></i></button>
+                    <a href="register.html" class="btn btn-primary btn-sm">Start</a>
                     <button id="mobileMenuBtn" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-                    <a href="register.html" class="btn btn-primary">Start Writing</a>
                 </div>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="section-padding container template-hero">
-            <div class="text-center">
+        <section class="template-hero section-padding">
+            <div class="container text-center">
                 <h1 class="reveal">Screenplay Templates for Every Format</h1>
                 <p class="section-subtitle reveal">Start with professional structures. Customize to fit your story.</p>
             </div>
+        </section>
 
-            <div class="category-section mt-12">
+        <section class="section-padding container">
+            <div class="category-section">
                 <h2 class="reveal">Feature Films</h2>
                 <div class="template-grid reveal">
                     <div class="card template-card">
                         <div class="template-preview">
-                            <img src="https://images.unsplash.com/photo-1478720143983-844288c432b4?auto=format&fit=crop&w=400&q=80"
+                            <img src="https://static.wixstatic.com/media/d682a9_31351a9bd82f40cbbc20e2b3ea71150b~mv2.png/v1/fill/w_980,h_547,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/d682a9_31351a9bd82f40cbbc20e2b3ea71150b~mv2.png"
                                 alt="3 Act">
                         </div>
                         <div class="template-content">
                             <span class="template-tag">Structure</span>
                             <h3>Three-Act Structure</h3>
-                            <p>Classic setup, confrontation, and resolution structure. Includes midpoint and climax
+                            <p>Classic setup, confrontation, and resolution structure.
                                 markers.</p>
                             <a href="#" class="btn btn-ghost mt-auto w-full">Use Template</a>
                         </div>
                     </div>
                     <div class="card template-card">
                         <div class="template-preview">
-                            <img src="https://images.unsplash.com/photo-1542204172-3c2415d7815e?auto=format&fit=crop&w=400&q=80"
+                            <img src="https://s.studiobinder.com/wp-content/uploads/2025/01/The-Ultimate-Save-The-Cat-Film-Beat-Sheet-Template-StudioBinder.webp"
                                 alt="Safe Cat">
                         </div>
                         <div class="template-content">
@@ -145,7 +178,7 @@
                     </div>
                     <div class="card template-card">
                         <div class="template-preview">
-                            <img src="https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?auto=format&fit=crop&w=400&q=80"
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt059W8xvOv4eB72J9AT4lvHWScK6X_-nvsg&s"
                                 alt="Hero Journey">
                         </div>
                         <div class="template-content">
@@ -157,13 +190,15 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="category-section mt-20">
+        <section class="section-padding container">
+            <div class="category-section">
                 <h2 class="reveal">TV & Streaming</h2>
                 <div class="template-grid reveal">
                     <div class="card template-card">
                         <div class="template-preview">
-                            <img src="https://images.unsplash.com/photo-1598897349489-447a9744c9a4?auto=format&fit=crop&w=400&q=80"
+                            <img src="https://s3.amazonaws.com/static.the-next-tech.com/wp-content/uploads/2021/05/07183709/TV-provider.jpg"
                                 alt="1-Hour Drama">
                         </div>
                         <div class="template-content">
@@ -184,6 +219,96 @@
                             <p>Cold open, A-story, B-story structure for high-pacing episodic comedy.</p>
                             <a href="#" class="btn btn-ghost mt-auto w-full">Use Template</a>
                         </div>
+                    </div>
+                    <div class="card template-card">
+                        <div class="template-preview">
+                            <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/07/guillermo-del-toro-from-guillermo-del-toro-s-cabinet-of-curiosities-david-from-black-mirror-and-sonnie-from-love-death-and-robots.jpg"
+                                alt="Limited Series">
+                        </div>
+                        <div class="template-content">
+                            <span class="template-tag">Limited Series</span>
+                            <h3>Anthology Series</h3>
+                            <p>Self-contained stories with recurring themes, perfect for limited.</p>
+                            <a href="#" class="btn btn-ghost mt-auto w-full">Use Template</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Templates Section -->
+        <section class="section-padding">
+            <div class="container">
+                <h2 class="section-title text-center reveal">Premium Templates</h2>
+                <p class="section-subtitle text-center reveal">Professional-grade templates for every genre and format</p>
+                <div class="template-grid reveal">
+                    <div class="card template-card">
+                        <div class="template-preview">
+                            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=400&q=80" alt="Drama Template">
+                        </div>
+                        <div class="template-content">
+                            <span class="template-tag">Premium</span>
+                            <h3>Drama Master</h3>
+                            <p>Complete character development and emotional arc templates</p>
+                            <a href="#" class="btn btn-secondary mt-auto w-full">Use Template</a>
+                        </div>
+                    </div>
+                    <div class="card template-card">
+                        <div class="template-preview">
+                            <img src="https://assets.prowritingaid.com/f/145420/750x469/d064fc102a/blog-content-elements-of-a-thriller.png/m/" alt="Thriller Template">
+                        </div>
+                        <div class="template-content">
+                            <span class="template-tag">Premium</span>
+                            <h3>Thriller Structure</h3>
+                            <p>Suspense-building pacing and plot twist frameworks</p>
+                            <a href="#" class="btn btn-secondary mt-auto w-full">Use Template</a>
+                        </div>
+                    </div>
+                    <div class="card template-card">
+                        <div class="template-preview">
+                            <img src="https://ucarecdn.com/f4f3b4e5-d470-4621-a5f9-66a319dfdb96/-/crop/426x212/0,111/-/preview/" alt="Comedy Template">
+                        </div>
+                        <div class="template-content">
+                            <span class="template-tag">Premium</span>
+                            <h3>Comedy Gold</h3>
+                            <p>Joke timing and comedic structure blueprints</p>
+                            <a href="#" class="btn btn-secondary mt-auto w-full">Use Template</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Design Options Section -->
+        <section class="section-padding bg-alt">
+            <div class="container">
+                <div class="content-wrapper reveal">
+                    <div class="content-text">
+                        <h2 class="section-title">Custom Design Options</h2>
+                        <p class="section-subtitle">Tailor your screenplay experience with personalized layouts and themes</p>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <i class="fas fa-palette text-primary"></i>
+                                <span>Custom color schemes and themes</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-font text-primary"></i>
+                                <span>Personalized typography settings</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-ruler-combined text-primary"></i>
+                                <span>Adjustable margins and spacing</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-save text-primary"></i>
+                                <span>Save custom templates for reuse</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-secondary">Explore Customization</a>
+                    </div>
+                    <div class="content-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVI2I-VttdL5fSj5lMcdZCpvRjxobHqlheTw&s" alt="Custom Design Interface" class="showcase-image">
                     </div>
                 </div>
             </div>
@@ -218,7 +343,6 @@
                 <div class="footer-col">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="learning-hub.html">Learning Hub</a></li>
                         <li><a href="success-stories.html">Success Stories</a></li>
                         <li><a href="resources.html">Downloads</a></li>
                         <li><a href="contact.html">Support</a></li>

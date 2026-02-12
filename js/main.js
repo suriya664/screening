@@ -11,11 +11,13 @@ const initTheme = () => {
 };
 
 const updateThemeIcon = (isDark) => {
-    const icon = darkModeToggle.querySelector('i');
-    if (isDark) {
-        icon.classList.replace('fa-moon', 'fa-sun');
-    } else {
-        icon.classList.replace('fa-sun', 'fa-moon');
+    if (darkModeToggle) {
+        const icon = darkModeToggle.querySelector('i');
+        if (isDark) {
+            icon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            icon.classList.replace('fa-sun', 'fa-moon');
+        }
     }
 };
 
@@ -27,6 +29,9 @@ if (darkModeToggle) {
         updateThemeIcon(isDark);
     });
 }
+
+// Initialize theme on page load
+initTheme();
 
 // Mobile Menu
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
