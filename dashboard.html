@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/screenplay-formatting.css">
     <link rel="stylesheet" href="css/dashboard-sidebar.css">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    
+
     <style>
         /* Additional dashboard-specific styles */
         .dashboard-card {
@@ -28,26 +28,26 @@
             padding: var(--space-3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .dashboard-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-md);
         }
-        
+
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: var(--space-3);
         }
-        
+
         .card-title {
             font-size: 1.25rem;
             font-weight: 600;
             color: var(--color-primary);
             margin: 0;
         }
-        
+
         .card-icon {
             width: 40px;
             height: 40px;
@@ -59,27 +59,27 @@
             color: #fff;
             font-size: 1.2rem;
         }
-        
+
         .stat-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: var(--space-3);
             margin-top: var(--space-3);
         }
-        
+
         .stat-box {
             background: #1a1a1a;
             padding: var(--space-3);
             border-radius: 8px;
             text-align: center;
         }
-        
+
         .stat-value {
             font-size: 2rem;
             font-weight: 700;
             color: #fff;
         }
-        
+
         .stat-label {
             font-size: 0.875rem;
             color: #ccc;
@@ -95,18 +95,18 @@
             <i class="fas fa-clapperboard"></i>
             <span>ScriptPro</span>
         </a>
-        
+
         <nav>
             <ul class="sidebar-nav">
-                
-                 
-                 
+
+
+
                 <li><a href="features.html"><i class="fas fa-star"></i> Features</a></li>
                 <li><a href="pricing.html"><i class="fas fa-tag"></i> Pricing</a></li>
                 <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
-        
+
         <div class="sidebar-footer">
             <button id="darkModeToggle" class="btn">
                 <i class="fas fa-moon"></i> Dark Mode
@@ -129,27 +129,15 @@
                 </button>
                 <h1>Dashboard</h1>
             </div>
-            
+
             <div class="header-right">
-                <div class="writing-controls">
-                    <button id="darkModeToggle" class="control-btn" title="Dark Mode">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <button id="focusModeToggle" class="control-btn" title="Focus Mode">
-                        <i class="fas fa-eye-slash"></i>
-                    </button>
-                    <div class="auto-save-indicator" title="Auto-save Active">
-                        <i class="fas fa-save"></i>
-                        <span>Auto-saving</span>
-                    </div>
-                    <div class="cloud-sync-status" title="Cloud Sync">
-                        <i class="fas fa-cloud"></i>
-                        <span>Synced</span>
-                    </div>
-                </div>
+
+
+
             </div>
         </div>
-        
+        </div>
+
         <div class="dashboard-content">
             <div class="dashboard-grid">
                 <!-- Recent Projects -->
@@ -171,7 +159,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Quick Actions -->
                 <div class="dashboard-card">
                     <div class="card-header">
@@ -189,7 +177,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Writing Stats -->
                 <div class="dashboard-card">
                     <div class="card-header">
@@ -224,7 +212,7 @@
             const sidebarToggle = document.getElementById('sidebarToggle');
             const sidebar = document.querySelector('.sidebar');
             const sidebarOverlay = document.getElementById('sidebarOverlay');
-            
+
             if (sidebarToggle && sidebar && sidebarOverlay) {
                 sidebarToggle.addEventListener('click', () => {
                     // Check screen size to determine behavior
@@ -232,7 +220,7 @@
                         // Mobile & Tablet: Slide in/out
                         sidebar.classList.toggle('active');
                         sidebarOverlay.classList.toggle('active');
-                        
+
                         // Toggle icon between bars and X
                         const icon = sidebarToggle.querySelector('i');
                         if (sidebar.classList.contains('active')) {
@@ -245,7 +233,7 @@
                     } else {
                         // Desktop: Collapse/expand
                         sidebar.classList.toggle('collapsed');
-                        
+
                         // Toggle icon between bars and chevron
                         const icon = sidebarToggle.querySelector('i');
                         if (sidebar.classList.contains('collapsed')) {
@@ -257,7 +245,7 @@
                         }
                     }
                 });
-                
+
                 // Close sidebar when clicking overlay
                 sidebarOverlay.addEventListener('click', () => {
                     sidebar.classList.remove('active');
@@ -266,7 +254,7 @@
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 });
-                
+
                 // Close sidebar when clicking outside on mobile & tablet
                 document.addEventListener('click', (e) => {
                     if (window.innerWidth <= 992) {
@@ -279,7 +267,7 @@
                         }
                     }
                 });
-                
+
                 // Handle window resize
                 window.addEventListener('resize', () => {
                     if (window.innerWidth > 992 && sidebar.classList.contains('active')) {
@@ -291,13 +279,13 @@
                     }
                 });
             }
-            
+
             // Writing controls functionality
             const darkModeToggle = document.getElementById('darkModeToggle');
             const focusModeToggle = document.getElementById('focusModeToggle');
             const autoSaveIndicator = document.querySelector('.auto-save-indicator');
             const cloudSyncStatus = document.querySelector('.cloud-sync-status');
-            
+
             // Dark mode toggle
             if (darkModeToggle) {
                 darkModeToggle.addEventListener('click', () => {
@@ -314,7 +302,7 @@
                     }
                 });
             }
-            
+
             // Focus mode toggle
             if (focusModeToggle) {
                 focusModeToggle.addEventListener('click', () => {
@@ -332,7 +320,7 @@
                     }
                 });
             }
-            
+
             // Auto-save simulation
             let autoSaveInterval;
             function startAutoSave() {
@@ -341,13 +329,13 @@
                     const span = autoSaveIndicator.querySelector('span');
                     span.textContent = 'Auto-saving';
                 }
-                
+
                 // Simulate auto-save every 5 seconds
                 autoSaveInterval = setInterval(() => {
                     console.log('Auto-saving content...');
                 }, 5000);
             }
-            
+
             function stopAutoSave() {
                 if (autoSaveInterval) {
                     clearInterval(autoSaveInterval);
@@ -358,23 +346,23 @@
                     span.textContent = 'Auto-save';
                 }
             }
-            
+
             // Start auto-save by default
             startAutoSave();
-            
+
             // Cloud sync simulation
             function simulateCloudSync() {
                 if (cloudSyncStatus) {
                     cloudSyncStatus.classList.add('syncing');
                     const span = cloudSyncStatus.querySelector('span');
                     span.textContent = 'Syncing...';
-                    
+
                     // Simulate sync completion after 2 seconds
                     setTimeout(() => {
                         cloudSyncStatus.classList.remove('syncing');
                         cloudSyncStatus.classList.add('active');
                         span.textContent = 'Synced';
-                        
+
                         // Remove active status after 3 seconds
                         setTimeout(() => {
                             cloudSyncStatus.classList.remove('active');
@@ -383,10 +371,10 @@
                     }, 2000);
                 }
             }
-            
+
             // Auto-sync every 30 seconds
             setInterval(simulateCloudSync, 30000);
-            
+
             // Keyboard shortcuts
             document.addEventListener('keydown', (e) => {
                 // Ctrl/Cmd + D for dark mode
@@ -394,26 +382,26 @@
                     e.preventDefault();
                     darkModeToggle.click();
                 }
-                
+
                 // Ctrl/Cmd + F for focus mode
                 if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
                     e.preventDefault();
                     focusModeToggle.click();
                 }
-                
+
                 // Ctrl/Cmd + S for manual save
                 if ((e.ctrlKey || e.metaKey) && e.key === 's') {
                     e.preventDefault();
                     console.log('Manual save triggered');
                 }
-                
+
                 // ESC to exit focus mode
                 if (e.key === 'Escape' && document.querySelector('.focus-mode.active')) {
                     focusModeToggle.click();
                 }
             });
         });
-        
+
         function createFocusMode() {
             const focusMode = document.createElement('div');
             focusMode.className = 'focus-mode';
