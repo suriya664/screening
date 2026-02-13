@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <style>
@@ -25,7 +25,7 @@
             margin-top: 50px;
             justify-items: center;
         }
-        
+
         .template-card {
             padding: 0;
             overflow: hidden;
@@ -35,7 +35,7 @@
             width: 100%;
             max-width: 400px;
         }
-        
+
         .template-preview {
             height: 220px;
             background: linear-gradient(135deg, var(--background-secondary), var(--background-card));
@@ -45,7 +45,7 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .template-preview img {
             width: 100%;
             height: 100%;
@@ -53,11 +53,11 @@
             opacity: 0.7;
             transition: transform 0.3s;
         }
-        
+
         .template-card:hover .template-preview img {
             transform: scale(1.05);
         }
-        
+
         .template-content {
             padding: 25px;
             flex-grow: 1;
@@ -65,7 +65,7 @@
             flex-direction: column;
             text-align: center;
         }
-        
+
         .template-tag {
             background: var(--background-secondary);
             padding: 4px 12px;
@@ -75,37 +75,43 @@
             color: var(--color-primary);
             margin-bottom: 10px;
             display: inline-block;
+            align-self: center;
         }
-        
+
+        .template-card .btn {
+            margin-top: auto;
+            align-self: center;
+        }
+
         .dark .template-preview {
             background: #333;
         }
-        
+
         /* Responsive - Keep 3/3 as long as possible */
         @media (max-width: 1200px) {
             .template-grid {
                 gap: 25px;
             }
         }
-        
+
         @media (max-width: 992px) {
             .template-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 20px;
             }
         }
-        
+
         @media (max-width: 768px) {
             .template-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
             }
-            
+
             .template-card {
                 max-width: none;
             }
         }
-        
+
         @media (max-width: 480px) {
             .template-grid {
                 grid-template-columns: 1fr;
@@ -192,7 +198,7 @@
             </div>
         </section>
 
-        <section class="section-padding container">
+        <section class="section-padding container" style="margin-top: var(--space-6);">
             <div class="category-section">
                 <h2 class="reveal">TV & Streaming</h2>
                 <div class="template-grid reveal">
@@ -240,11 +246,13 @@
         <section class="section-padding">
             <div class="container">
                 <h2 class="section-title text-center reveal">Premium Templates</h2>
-                <p class="section-subtitle text-center reveal">Professional-grade templates for every genre and format</p>
+                <p class="section-subtitle text-center reveal">Professional-grade templates for every genre and format
+                </p>
                 <div class="template-grid reveal">
                     <div class="card template-card">
                         <div class="template-preview">
-                            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=400&q=80" alt="Drama Template">
+                            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=400&q=80"
+                                alt="Drama Template">
                         </div>
                         <div class="template-content">
                             <span class="template-tag">Premium</span>
@@ -255,7 +263,8 @@
                     </div>
                     <div class="card template-card">
                         <div class="template-preview">
-                            <img src="https://assets.prowritingaid.com/f/145420/750x469/d064fc102a/blog-content-elements-of-a-thriller.png/m/" alt="Thriller Template">
+                            <img src="https://assets.prowritingaid.com/f/145420/750x469/d064fc102a/blog-content-elements-of-a-thriller.png/m/"
+                                alt="Thriller Template">
                         </div>
                         <div class="template-content">
                             <span class="template-tag">Premium</span>
@@ -266,7 +275,8 @@
                     </div>
                     <div class="card template-card">
                         <div class="template-preview">
-                            <img src="https://ucarecdn.com/f4f3b4e5-d470-4621-a5f9-66a319dfdb96/-/crop/426x212/0,111/-/preview/" alt="Comedy Template">
+                            <img src="https://ucarecdn.com/f4f3b4e5-d470-4621-a5f9-66a319dfdb96/-/crop/426x212/0,111/-/preview/"
+                                alt="Comedy Template">
                         </div>
                         <div class="template-content">
                             <span class="template-tag">Premium</span>
@@ -275,7 +285,7 @@
                             <a href="#" class="btn btn-secondary mt-auto w-full">Use Template</a>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
@@ -286,7 +296,8 @@
                 <div class="content-wrapper reveal">
                     <div class="content-text">
                         <h2 class="section-title">Custom Design Options</h2>
-                        <p class="section-subtitle">Tailor your screenplay experience with personalized layouts and themes</p>
+                        <p class="section-subtitle">Tailor your screenplay experience with personalized layouts and
+                            themes</p>
                         <div class="feature-list">
                             <div class="feature-item">
                                 <i class="fas fa-palette text-primary"></i>
@@ -308,7 +319,8 @@
                         <a href="#" class="btn btn-secondary">Explore Customization</a>
                     </div>
                     <div class="content-image">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVI2I-VttdL5fSj5lMcdZCpvRjxobHqlheTw&s" alt="Custom Design Interface" class="showcase-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVI2I-VttdL5fSj5lMcdZCpvRjxobHqlheTw&s"
+                            alt="Custom Design Interface" class="showcase-image">
                     </div>
                 </div>
             </div>

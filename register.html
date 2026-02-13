@@ -13,21 +13,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <body class="auth-page">
+    <div class="auth-theme-wrapper">
+        <button id="darkModeToggle" class="btn-theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
     <div class="auth-card reveal">
-        <div class="logo" style="text-align: center; margin-bottom: 20px;">
-            <a href="index.html" style="text-decoration: none; color: inherit;">
+        <div class="logo">
+            <a href="index.html">
                 <i class="fas fa-clapperboard"></i>
                 <span>ScriptPro</span>
             </a>
         </div>
         <h2 class="mb-6">Create Account</h2>
         <p class="mb-12">Join 50,000+ writers and start your masterpiece.</p>
+
+        <div class="social-login-grid">
+            <button class="social-btn">
+                <img src="https://www.google.com/favicon.ico" alt="Google" width="18">
+                Google
+            </button>
+            <button class="social-btn">
+                <i class="fab fa-facebook" style="color: #1877F2; font-size: 1.2rem;"></i>
+                Facebook
+            </button>
+        </div>
+
+        <div class="divider-text">or sign up with email</div>
 
         <form action="dashboard.html" class="auth-form">
             <div class="form-group">
@@ -44,16 +63,14 @@
             </div>
 
             <button type="submit" class="btn btn-highlight w-full mb-6">Sign Up Free</button>
-
-            <div style="text-align: center; margin-top: 20px;">
-                Already have an account? <a href="login.html" class="text-burgundy font-bold">Log In</a>
-            </div>
         </form>
 
-        <div class="film-strip" style="height: 2px; background: var(--border-color); margin: 30px 0;"></div>
+        <div style="text-align: center; margin-top: 20px;">
+            Already have an account? <a href="login.html" class="text-burgundy font-bold"
+                style="text-decoration: underline;">Log In</a>
+        </div>
 
-        <p>Already have an account? <a href="login.html" class="text-burgundy font-bold">Log In Here</a></p>
-        <div class="terms mt-4" style="font-size: 0.8rem; color: var(--text-muted);">
+        <div class="terms mt-6" style="font-size: 0.8rem; color: var(--text-muted); text-align: center;">
             By signing up, you agree to our <a href="#" class="text-burgundy">Terms</a> and <a href="#"
                 class="text-burgundy">Privacy Policy</a>.
         </div>

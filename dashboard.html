@@ -123,11 +123,31 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="dashboard-header">
-            <button id="sidebarToggle" class="sidebar-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <h1>Dashboard</h1>
-             
+            <div class="header-left">
+                <button id="sidebarToggle" class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Dashboard</h1>
+            </div>
+            
+            <div class="header-right">
+                <div class="writing-controls">
+                    <button id="darkModeToggle" class="control-btn" title="Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="focusModeToggle" class="control-btn" title="Focus Mode">
+                        <i class="fas fa-eye-slash"></i>
+                    </button>
+                    <div class="auto-save-indicator" title="Auto-save Active">
+                        <i class="fas fa-save"></i>
+                        <span>Auto-saving</span>
+                    </div>
+                    <div class="cloud-sync-status" title="Cloud Sync">
+                        <i class="fas fa-cloud"></i>
+                        <span>Synced</span>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div class="dashboard-content">
@@ -271,7 +291,135 @@
                     }
                 });
             }
+            
+            // Writing controls functionality
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const focusModeToggle = document.getElementById('focusModeToggle');
+            const autoSaveIndicator = document.querySelector('.auto-save-indicator');
+            const cloudSyncStatus = document.querySelector('.cloud-sync-status');
+            
+            // Dark mode toggle
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                    const icon = darkModeToggle.querySelector('i');
+                    if (document.body.classList.contains('dark-mode')) {
+                        icon.classList.remove('fa-moon');
+                        icon.classList.add('fa-sun');
+                        darkModeToggle.title = 'Light Mode';
+                    } else {
+                        icon.classList.remove('fa-sun');
+                        icon.classList.add('fa-moon');
+                        darkModeToggle.title = 'Dark Mode';
+                    }
+                });
+            }
+            
+            // Focus mode toggle
+            if (focusModeToggle) {
+                focusModeToggle.addEventListener('click', () => {
+                    const focusMode = document.querySelector('.focus-mode') || createFocusMode();
+                    focusMode.classList.toggle('active');
+                    const icon = focusModeToggle.querySelector('i');
+                    if (focusMode.classList.contains('active')) {
+                        icon.classList.remove('fa-eye-slash');
+                        icon.classList.add('fa-eye');
+                        focusModeToggle.title = 'Exit Focus Mode';
+                    } else {
+                        icon.classList.remove('fa-eye');
+                        icon.classList.add('fa-eye-slash');
+                        focusModeToggle.title = 'Focus Mode';
+                    }
+                });
+            }
+            
+            // Auto-save simulation
+            let autoSaveInterval;
+            function startAutoSave() {
+                if (autoSaveIndicator) {
+                    autoSaveIndicator.classList.add('active');
+                    const span = autoSaveIndicator.querySelector('span');
+                    span.textContent = 'Auto-saving';
+                }
+                
+                // Simulate auto-save every 5 seconds
+                autoSaveInterval = setInterval(() => {
+                    console.log('Auto-saving content...');
+                }, 5000);
+            }
+            
+            function stopAutoSave() {
+                if (autoSaveInterval) {
+                    clearInterval(autoSaveInterval);
+                }
+                if (autoSaveIndicator) {
+                    autoSaveIndicator.classList.remove('active');
+                    const span = autoSaveIndicator.querySelector('span');
+                    span.textContent = 'Auto-save';
+                }
+            }
+            
+            // Start auto-save by default
+            startAutoSave();
+            
+            // Cloud sync simulation
+            function simulateCloudSync() {
+                if (cloudSyncStatus) {
+                    cloudSyncStatus.classList.add('syncing');
+                    const span = cloudSyncStatus.querySelector('span');
+                    span.textContent = 'Syncing...';
+                    
+                    // Simulate sync completion after 2 seconds
+                    setTimeout(() => {
+                        cloudSyncStatus.classList.remove('syncing');
+                        cloudSyncStatus.classList.add('active');
+                        span.textContent = 'Synced';
+                        
+                        // Remove active status after 3 seconds
+                        setTimeout(() => {
+                            cloudSyncStatus.classList.remove('active');
+                            span.textContent = 'Cloud Sync';
+                        }, 3000);
+                    }, 2000);
+                }
+            }
+            
+            // Auto-sync every 30 seconds
+            setInterval(simulateCloudSync, 30000);
+            
+            // Keyboard shortcuts
+            document.addEventListener('keydown', (e) => {
+                // Ctrl/Cmd + D for dark mode
+                if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
+                    e.preventDefault();
+                    darkModeToggle.click();
+                }
+                
+                // Ctrl/Cmd + F for focus mode
+                if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+                    e.preventDefault();
+                    focusModeToggle.click();
+                }
+                
+                // Ctrl/Cmd + S for manual save
+                if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+                    e.preventDefault();
+                    console.log('Manual save triggered');
+                }
+                
+                // ESC to exit focus mode
+                if (e.key === 'Escape' && document.querySelector('.focus-mode.active')) {
+                    focusModeToggle.click();
+                }
+            });
         });
+        
+        function createFocusMode() {
+            const focusMode = document.createElement('div');
+            focusMode.className = 'focus-mode';
+            document.body.appendChild(focusMode);
+            return focusMode;
+        }
     </script>
 </body>
 

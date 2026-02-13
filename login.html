@@ -17,15 +17,34 @@
 </head>
 
 <body class="auth-page">
+    <div class="auth-theme-wrapper">
+        <button id="darkModeToggle" class="btn-theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
     <div class="auth-card reveal">
-        <div class="logo" style="text-align: center; margin-bottom: 20px;">
-            <a href="index.html" style="text-decoration: none; color: inherit;">
+        <div class="logo">
+            <a href="index.html">
                 <i class="fas fa-clapperboard"></i>
                 <span>ScriptPro</span>
             </a>
         </div>
         <h2 class="mb-6">Welcome Back</h2>
         <p class="mb-12">Enter your credentials to access your scripts.</p>
+
+        <div class="social-login-grid">
+            <button class="social-btn">
+                <img src="https://www.google.com/favicon.ico" alt="Google" width="18">
+                Google
+            </button>
+            <button class="social-btn">
+                <i class="fab fa-facebook" style="color: #1877F2; font-size: 1.2rem;"></i>
+                Facebook
+            </button>
+        </div>
+
+        <div class="divider-text">or sign in with email</div>
 
         <form action="dashboard.html" class="auth-form">
             <div class="form-group">
@@ -41,20 +60,16 @@
                 <div class="remember-me">
                     <input type="checkbox" id="remember">
                     <label for="remember">Remember me</label>
-                    <a href="#" class="text-burgundy font-bold" style="margin-left: auto;">Forgot password?</a>
                 </div>
+                <a href="#" class="text-burgundy font-bold">Forgot password?</a>
             </div>
 
             <button type="submit" class="btn btn-highlight w-full mb-6">Sign In</button>
-
-            <div style="text-align: center; margin-top: 20px;">
-                Don't have an account? <a href="register.html" class="text-burgundy font-bold">Sign Up Free</a>
-            </div>
         </form>
 
-        <div class="film-strip" style="height: 2px; background: var(--border-color); margin: 30px 0;"></div>
-
-        <p>Don't have an account? <a href="register.html" class="text-burgundy font-bold">Sign Up Free</a></p>
+        <div style="text-align: center; margin-top: 20px;">
+            Don't have an account? <a href="register.html" class="text-burgundy font-bold" style="text-decoration: underline;">Sign Up Free</a>
+        </div>
     </div>
 
     <script src="js/main.js"></script>
