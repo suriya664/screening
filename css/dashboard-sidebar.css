@@ -141,7 +141,7 @@ body {
 
 .sidebar-footer .btn-danger {
     background: var(--color-error);
-    color: #fff;
+    color: #FFFFFF;
     border-color: var(--color-error);
     margin-top: 0;
     margin-bottom: 0;
@@ -150,7 +150,7 @@ body {
 .sidebar-footer .btn-danger:hover {
     background: #a02c2c;
     border-color: #a02c2c;
-    color: #fff;
+    color: #FFFFFF;
 }
 
 /* Sidebar overlay for mobile/tablet */
@@ -459,7 +459,7 @@ body {
 
 .control-btn.active {
     background: var(--color-primary);
-    color: white;
+    color: #FFFFFF;
     border-color: var(--color-primary);
 }
 
@@ -480,13 +480,13 @@ body {
 .auto-save-indicator.active,
 .cloud-sync-status.syncing {
     background: var(--color-success);
-    color: white;
+    color: #FFFFFF;
     border-color: var(--color-success);
 }
 
 .cloud-sync-status.error {
     background: var(--color-error);
-    color: white;
+    color: #FFFFFF;
     border-color: var(--color-error);
 }
 

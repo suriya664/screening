@@ -55,22 +55,29 @@
             </div>
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" class="input-field" placeholder="name@company.com" required>
+                <input type="email" id="email" class="input-field" placeholder="name@company.com"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address"
+                    required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" class="input-field" placeholder="••••••" required>
+                <input type="password" id="password" class="input-field" placeholder="••••••" minlength="8"
+                    title="Password must be at least 8 characters" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" class="input-field" placeholder="••••••" minlength="8"
+                    title="Please confirm your password" required>
             </div>
 
             <button type="submit" class="btn btn-highlight w-full mb-6">Sign Up Free</button>
         </form>
 
-        <div style="text-align: center; margin-top: 20px;">
-            Already have an account? <a href="login.html" class="text-burgundy font-bold"
-                style="text-decoration: underline;">Log In</a>
+        <div class="text-center mt-5">
+            Already have an account? <a href="login.html" class="text-burgundy font-bold">Sign In</a>
         </div>
 
-        <div class="terms mt-6" style="font-size: 0.8rem; color: var(--text-muted); text-align: center;">
+        <div class="terms mt-6 text-sm text-muted text-center">
             By signing up, you agree to our <a href="#" class="text-burgundy">Terms</a> and <a href="#"
                 class="text-burgundy">Privacy Policy</a>.
         </div>
