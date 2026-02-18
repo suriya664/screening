@@ -396,15 +396,22 @@ p {
     border-radius: 12px;
 }
 
-/* HEADER & NAVIGATION - Dark header for white text */
+/* HEADER & NAVIGATION */
 header {
-    background: #2C2C2C;
+    background: rgba(255, 255, 255, 0.95);
     padding: var(--space-2) 0;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
     position: sticky;
     top: 0;
     z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+:root.dark header {
+    background: rgba(44, 44, 44, 0.95);
+    border-bottom: 1px solid #444;
 }
 
 nav {
@@ -413,16 +420,16 @@ nav {
     align-items: center;
 }
 
-/* CRITICAL FIX: Ensure nav links are WHITE on dark header */
+/* Nav Links - Adapted for Light/Dark */
 nav a {
-    color: #FFFFFF !important;
+    color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: var(--color-secondary) !important;
+    color: var(--color-primary);
 }
 
 @media (max-width: 1024px) {
@@ -437,7 +444,7 @@ nav a:hover {
     gap: 10px;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #FFFFFF !important;
+    color: var(--text-primary);
     text-decoration: none;
 }
 
@@ -451,17 +458,23 @@ nav a:hover {
 }
 
 .nav-links a {
-    color: #FFFFFF !important;
+    color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     padding: var(--space-1) var(--space-2);
     border-radius: 6px;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--color-secondary) !important;
+    color: var(--color-primary);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+:root.dark .nav-links a:hover,
+:root.dark .nav-links a.active {
+    color: var(--color-secondary);
     background: rgba(255, 255, 255, 0.1);
 }
 
@@ -475,27 +488,37 @@ nav a:hover {
 .btn-theme {
     background: none;
     font-size: 1.2rem;
-    color: #FFFFFF !important;
+    color: var(--text-primary);
     padding: var(--space-1);
     border-radius: 6px;
     transition: all 0.3s ease;
 }
 
 .btn-theme:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--color-primary);
+}
+
+:root.dark .btn-theme:hover {
     background: rgba(255, 255, 255, 0.1);
-    color: var(--color-secondary) !important;
+    color: var(--color-secondary);
 }
 
 .mobile-menu-btn {
     display: none;
     background: none;
     font-size: 1.5rem;
-    color: #FFFFFF !important;
+    color: var(--text-primary);
     padding: var(--space-1);
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .mobile-menu-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+:root.dark .mobile-menu-btn:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
@@ -512,9 +535,9 @@ nav a:hover {
         top: 70px;
         left: 0;
         width: 100%;
-        background: #2C2C2C;
+        background: var(--background-card);
         padding: var(--space-4) var(--space-2);
-        border-bottom: 1px solid #444;
+        border-bottom: 1px solid var(--border-color);
         box-shadow: var(--shadow-lg);
         text-align: center;
         z-index: 2000;
@@ -527,6 +550,11 @@ nav a:hover {
         /* Fix clipping of Home 1 and Dashboard */
     }
 
+    :root.dark .nav-links {
+        background: #2C2C2C;
+        border-bottom: 1px solid #444;
+    }
+
     .nav-links.show {
         display: flex;
     }
@@ -534,6 +562,12 @@ nav a:hover {
     .nav-links li {
         margin-bottom: 0;
         padding: var(--space-1) 0;
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
     }
 
     .nav-actions {
@@ -1394,13 +1428,44 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--space-4);
     }
+
+    /* Only center the first column (Logo, Text, Socials) */
+    .footer-col:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        /* Force left alignment */
+        text-align: left !important;
+        /* Force left alignment */
+        grid-column: 1 / -1;
+    }
+
+    .footer-col:first-child .logo {
+        justify-content: flex-start !important;
+        margin-bottom: var(--space-2);
+    }
+
+    .footer-col:first-child p {
+        text-align: left !important;
+        margin-left: 0 !important;
+    }
+
+    .social-links {
+        justify-content: flex-start !important;
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: var(--space-3);
-        text-align: center;
+    }
+
+    /* Ensure first col remains left-aligned */
+    .footer-col:first-child {
+        align-items: flex-start;
+        /* Changed from center to flex-start */
     }
 
     .footer-col p {
@@ -2346,6 +2411,15 @@ section:last-child {
     color: var(--color-primary);
     gap: 10px;
     text-align: center;
+}
+
+/* Remove underline specifically for the logo link */
+.auth-card .logo a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 @media (max-width: 768px) {

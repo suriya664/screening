@@ -172,6 +172,22 @@ body {
     visibility: visible;
 }
 
+/* Dashboard header fixes (Moved from bottom) */
+.dashboard-content {
+    flex: 1;
+    padding: var(--space-4);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
 /* Responsive design fixes */
 @media (max-width: 992px) {
     .sidebar-toggle {
@@ -185,10 +201,35 @@ body {
         height: 100vh;
         width: 250px;
         min-width: 250px;
-        z-index: 1000;
+        z-index: 1002;
+        /* Increased to sit above header */
         transform: translateX(-100%);
         transition: transform 0.3s ease;
         border-right: 1px solid var(--border-color);
+        /* Centering fixes */
+        align-items: center;
+        text-align: center;
+    }
+
+    .sidebar .logo {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .sidebar-nav {
+        width: 100%;
+    }
+
+    .sidebar-nav a {
+        justify-content: center;
+    }
+
+    .sidebar-footer {
+        width: 100%;
+    }
+
+    .sidebar-footer .btn {
+        justify-content: center;
     }
 
     .sidebar.active {
@@ -247,7 +288,8 @@ body {
     }
 
     .dashboard-header {
-        padding: var(--space-2) var(--space-3);
+        padding: 20px !important;
+        /* Forces padding on mobile */
         flex-wrap: wrap;
         gap: var(--space-2);
     }
@@ -264,7 +306,8 @@ body {
     }
 
     .dashboard-content {
-        padding: var(--space-2) var(--space-3);
+        padding: 20px !important;
+        /* Forces padding on mobile */
     }
 
     .dashboard-grid {
@@ -544,25 +587,4 @@ body.dark-mode .control-btn:hover {
     border-color: var(--color-primary);
 }
 
-/* Dashboard header fixes */
-
-.dashboard-content {
-    flex: 1;
-    padding: var(--space-4);
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-3);
-    margin-bottom: var(--space-4);
-}
-
-@media (max-width: 768px) {
-    .dashboard-grid {
-        grid-template-columns: 1fr;
-    }
-}
+/* Dashboard styles moved to top of file */
