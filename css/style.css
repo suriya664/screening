@@ -418,6 +418,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    /* Allow wrapping for mobile menu */
 }
 
 /* Nav Links - Adapted for Light/Dark */
@@ -434,7 +436,7 @@ nav a:hover {
 
 @media (max-width: 1024px) {
     nav {
-        flex-wrap: wrap;
+        /* No specific overrides needed for nav container, flex-wrap handles distinct rows */
     }
 }
 
@@ -530,53 +532,74 @@ nav a:hover {
 
     .nav-links {
         display: none;
+        /* Hidden by default */
         flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
         width: 100%;
+        /* Full width */
+        order: 3;
+        /* Push to bottom */
+        position: static;
+        /* Remove absolute positioning */
         background: var(--background-card);
-        padding: var(--space-4) var(--space-2);
-        border-bottom: 1px solid var(--border-color);
-        box-shadow: var(--shadow-lg);
+        padding: 8px var(--space-2);
+        /* Minimal container padding */
+        border-top: 1px solid var(--border-color);
+        /* Separator from header */
+        box-shadow: none;
+        /* Shadow handled by header or removed */
         text-align: center;
-        z-index: 2000;
-        /* Ensure it stays above everything */
-        gap: 10px;
-        max-height: calc(100vh - 70px);
-        overflow-y: auto;
+        gap: 4px;
+        /* Minimal spacing */
         align-items: center;
-        justify-content: flex-start !important;
-        /* Fix clipping of Home 1 and Dashboard */
+
+        /* Remove restrictions */
+        max-height: none;
+        overflow: visible;
+
+        /* Animation */
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     :root.dark .nav-links {
-        background: #2C2C2C;
-        border-bottom: 1px solid #444;
+        background: var(--background-secondary);
+        /* Match bg */
+        border-top: 1px solid #444;
+        border-bottom: none;
     }
 
     .nav-links.show {
         display: flex;
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .nav-links li {
-        margin-bottom: 0;
-        padding: var(--space-1) 0;
         width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     .nav-links a {
         display: block;
         width: 100%;
+        padding: 6px 0;
+        /* Minimal link padding */
+        font-size: 0.95rem;
+        /* Slightly smaller text */
     }
 
+    /* Adjust nav actions to stay on the right */
     .nav-actions {
-        gap: var(--space-1);
+        margin-left: auto;
+        /* Push to right if logo is on left */
+        gap: var(--space-2);
     }
 
     .nav-actions .btn {
+        font-size: 0.9rem;
         padding: 8px 16px;
-        font-size: 0.85rem;
     }
 }
 

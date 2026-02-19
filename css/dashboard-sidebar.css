@@ -12,6 +12,10 @@ body {
     overflow-x: hidden;
 }
 
+body.sidebar-open {
+    overflow: hidden;
+}
+
 /* Sidebar structure and positioning */
 .sidebar {
     width: 250px;
@@ -189,7 +193,7 @@ body {
 }
 
 /* Responsive design fixes */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .sidebar-toggle {
         display: flex;
     }
@@ -209,27 +213,67 @@ body {
         /* Centering fixes */
         align-items: center;
         text-align: center;
+        padding: 10px;
+        /* Reduced padding */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Center content vertically if space permits */
     }
 
     .sidebar .logo {
         justify-content: center;
         width: 100%;
+        margin-bottom: 10px;
+        /* Reduced margin */
+        padding: 5px;
+        /* Reduced padding */
+        font-size: 1.2rem;
+        /* Smaller font */
+        min-height: auto;
+        /* Remove min-height */
     }
 
     .sidebar-nav {
         width: 100%;
+        flex: 0 1 auto;
+        /* Allow shrinking */
+        overflow-y: auto;
+        /* Scroll internally if needed, but try to fit */
+        margin-bottom: 10px;
+    }
+
+    .sidebar-nav li {
+        margin-bottom: 2px;
+        /* Reduced margin */
     }
 
     .sidebar-nav a {
         justify-content: center;
+        padding: 6px 12px;
+        /* Reduced padding */
+        min-height: 32px;
+        /* Reduced height */
+        font-size: 0.9rem;
+        /* Smaller font */
     }
 
     .sidebar-footer {
         width: 100%;
+        padding-top: 10px;
+        /* Reduced padding */
+        margin-top: 0;
     }
 
     .sidebar-footer .btn {
         justify-content: center;
+        padding: 6px 12px;
+        /* Reduced padding */
+        min-height: 32px;
+        /* Reduced height */
+        margin-bottom: 4px;
+        /* Reduced margin */
+        font-size: 0.9rem;
     }
 
     .sidebar.active {
@@ -413,7 +457,7 @@ body {
     justify-content: center;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .sidebar-toggle {
         display: flex;
     }

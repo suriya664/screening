@@ -215,10 +215,11 @@
             if (sidebarToggle && sidebar && sidebarOverlay) {
                 sidebarToggle.addEventListener('click', () => {
                     // Check screen size to determine behavior
-                    if (window.innerWidth <= 992) {
+                    if (window.innerWidth <= 1024) {
                         // Mobile & Tablet: Slide in/out
                         sidebar.classList.toggle('active');
                         sidebarOverlay.classList.toggle('active');
+                        document.body.classList.toggle('sidebar-open');
 
                         // Toggle icon between bars and X
                         const icon = sidebarToggle.querySelector('i');
@@ -249,6 +250,7 @@
                 sidebarOverlay.addEventListener('click', () => {
                     sidebar.classList.remove('active');
                     sidebarOverlay.classList.remove('active');
+                    document.body.classList.remove('sidebar-open');
                     const icon = sidebarToggle.querySelector('i');
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
@@ -256,10 +258,12 @@
 
                 // Close sidebar when clicking outside on mobile & tablet
                 document.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 992) {
+                    if (window.innerWidth <= 1024) {
                         if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target) && !sidebarOverlay.contains(e.target)) {
+                            // Mobile & Tablet: Slide in/out
                             sidebar.classList.remove('active');
                             sidebarOverlay.classList.remove('active');
+                            document.body.classList.remove('sidebar-open');
                             const icon = sidebarToggle.querySelector('i');
                             icon.classList.remove('fa-times');
                             icon.classList.add('fa-bars');
@@ -269,9 +273,10 @@
 
                 // Handle window resize
                 window.addEventListener('resize', () => {
-                    if (window.innerWidth > 992 && sidebar.classList.contains('active')) {
+                    if (window.innerWidth > 1024 && sidebar.classList.contains('active')) {
                         sidebar.classList.remove('active');
                         sidebarOverlay.classList.remove('active');
+                        document.body.classList.remove('sidebar-open');
                         const icon = sidebarToggle.querySelector('i');
                         icon.classList.remove('fa-times');
                         icon.classList.add('fa-bars');
