@@ -1130,6 +1130,7 @@ section {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(139, 21, 56, 0.4);
     background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    color: #FFFFFF !important;
 }
 
 .btn-secondary {
@@ -1429,29 +1430,28 @@ footer {
         gap: var(--space-4);
     }
 
-    /* Only center the first column (Logo, Text, Socials) */
+    /* Center the first column (Logo, Text, Socials) */
     .footer-col:first-child {
         display: flex;
         flex-direction: column;
-        align-items: flex-start !important;
-        /* Force left alignment */
-        text-align: left !important;
-        /* Force left alignment */
+        align-items: center !important;
+        text-align: center !important;
         grid-column: 1 / -1;
     }
 
     .footer-col:first-child .logo {
-        justify-content: flex-start !important;
+        justify-content: center !important;
         margin-bottom: var(--space-2);
+        width: 100%;
     }
 
     .footer-col:first-child p {
-        text-align: left !important;
+        text-align: center !important;
         margin-left: 0 !important;
     }
 
     .social-links {
-        justify-content: flex-start !important;
+        justify-content: center !important;
         width: 100%;
     }
 }
@@ -1462,10 +1462,9 @@ footer {
         gap: var(--space-3);
     }
 
-    /* Ensure first col remains left-aligned */
+    /* Ensure first col is centered */
     .footer-col:first-child {
-        align-items: flex-start;
-        /* Changed from center to flex-start */
+        align-items: center;
     }
 
     .footer-col p {
@@ -2089,6 +2088,31 @@ section:last-child {
         text-align: center;
     }
 
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col .logo {
+        justify-content: center;
+        margin-bottom: var(--space-3);
+        width: 100%;
+    }
+
+    .footer-col p {
+        text-align: center;
+        margin-bottom: var(--space-3);
+    }
+
+    .footer-col .social-links {
+        justify-content: center;
+        display: flex;
+        gap: var(--space-3);
+        width: 100%;
+    }
+
     .pricing-cards .featured {
         transform: none;
     }
@@ -2285,6 +2309,31 @@ section:last-child {
     h2,
     h3 {
         text-align: center;
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col .logo {
+        justify-content: center;
+        margin-bottom: var(--space-3);
+        width: 100%;
+    }
+
+    .footer-col p {
+        text-align: center;
+        margin-bottom: var(--space-3);
+    }
+
+    .footer-col .social-links {
+        justify-content: center;
+        display: flex;
+        gap: var(--space-3);
+        width: 100%;
     }
 }
 
