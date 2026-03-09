@@ -128,20 +128,105 @@
             border-bottom-color: var(--color-primary);
         }
 
-        @media (max-width: 992px) {
+        .container-fluid {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 1024px) {
+            .flex-column-mobile {
+                flex-direction: column;
+            }
+
             .split-hero {
                 flex-direction: column;
+                padding-top: 100px;
+                min-height: auto;
             }
 
             .hero-left {
                 order: 2;
-                min-height: 50vh;
+                min-height: auto;
+                padding: var(--space-4);
+                width: 100%;
             }
 
             .hero-right {
                 order: 1;
-                min-height: 50vh;
-                padding-top: 40px;
+                min-height: auto;
+                padding: var(--space-4) var(--space-4) var(--space-6);
+                text-align: center;
+                align-items: center;
+                width: 100%;
+            }
+
+            .hero-right h1 {
+                font-size: 2.8rem;
+                margin-bottom: var(--space-3);
+            }
+
+            .hero-benefit {
+                text-align: left;
+                width: 100%;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0 var(--space-2);
+            }
+
+            .mockup-window {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .preview-text {
+                text-align: center !important;
+                padding: var(--space-4) !important;
+            }
+
+            .feature-list {
+                display: inline-block;
+                text-align: left;
+            }
+
+            .preview-image {
+                margin-top: 0;
+                padding: var(--space-4);
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .format-switcher-tabs {
+                flex-wrap: wrap;
+                border-bottom: none;
+                gap: 10px;
+                margin-bottom: var(--space-4);
+            }
+
+            .tab-btn {
+                border: 1px solid var(--border-color);
+                border-radius: 20px;
+                margin-bottom: 5px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .tab-btn.active {
+                background: var(--color-primary);
+                color: #fff;
+                border-color: var(--color-primary);
+            }
+
+            section {
+                margin-bottom: var(--space-5) !important;
+            }
+
+            .section-divider {
+                margin: var(--space-4) 0 !important;
             }
         }
     </style>
@@ -175,40 +260,43 @@
     <main>
         <!-- Split Hero Section -->
         <section class="split-hero section-padding">
-            <div class="hero-left">
-                <div class="mockup-window mockup-3d">
-                    <div class="mockup-inner">
-                        <div class="window-header">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                        </div>
-                        <div class="window-body" id="heroEditorText">
-                            <!-- Typing simulation will go here -->
+            <div class="container-fluid flex-column-mobile">
+                <div class="hero-left">
+                    <div class="mockup-window mockup-3d">
+                        <div class="mockup-inner">
+                            <div class="window-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="window-body" id="heroEditorText">
+                                <!-- Typing simulation will go here -->
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="hero-right">
-                <h1 class="reveal">Focus on the Story. <br>We'll handle the <span class="text-gradient">Format.</span>
-                </h1>
-                <div class="benefits-list mt-8">
-                    <div class="hero-benefit" style="transition-delay: 0.1s;">
-                        <h3><i class="fas fa-bolt text-burgundy"></i> Write Faster</h3>
-                        <p>Auto-complete characters and scene headings in real-time.</p>
+                <div class="hero-right">
+                    <h1 class="reveal">Focus on the Story. <br>We'll handle the <span
+                            class="text-gradient">Format.</span>
+                    </h1>
+                    <div class="benefits-list mt-8">
+                        <div class="hero-benefit" style="transition-delay: 0.1s;">
+                            <h3><i class="fas fa-bolt text-burgundy"></i> Write Faster</h3>
+                            <p>Auto-complete characters and scene headings in real-time.</p>
+                        </div>
+                        <div class="hero-benefit" style="transition-delay: 0.2s;">
+                            <h3><i class="fas fa-check-double text-burgundy"></i> Format Perfect</h3>
+                            <p>Industry standards built into every line you type.</p>
+                        </div>
+                        <div class="hero-benefit" style="transition-delay: 0.3s;">
+                            <h3><i class="fas fa-users text-burgundy"></i> Collaborate Live</h3>
+                            <p>Real-time co-writing with zero lag or version conflicts.</p>
+                        </div>
                     </div>
-                    <div class="hero-benefit" style="transition-delay: 0.2s;">
-                        <h3><i class="fas fa-check-double text-burgundy"></i> Format Perfect</h3>
-                        <p>Industry standards built into every line you type.</p>
+                    <div class="hero-ctas mt-8 reveal">
+                        <a href="register.html" class="btn btn-primary btn-lg">Get Started Free</a>
+                        <p class="mt-4 text-muted">Join 15,000+ screenwriters today.</p>
                     </div>
-                    <div class="hero-benefit" style="transition-delay: 0.3s;">
-                        <h3><i class="fas fa-users text-burgundy"></i> Collaborate Live</h3>
-                        <p>Real-time co-writing with zero lag or version conflicts.</p>
-                    </div>
-                </div>
-                <div class="hero-ctas mt-8 reveal">
-                    <a href="register.html" class="btn btn-primary btn-lg">Get Started Free</a>
-                    <p class="mt-4 text-muted">Join 15,000+ screenwriters today.</p>
                 </div>
             </div>
         </section>
@@ -217,31 +305,34 @@
         <div class="section-divider"></div>
 
         <!-- Interactive Format Switcher -->
-        <section class="format-switcher section-padding container mt-12">
-            <div class="text-center mb-12">
-                <h2 class="section-title reveal">One Tool for Every Stage</h2>
-            </div>
-            <div class="format-switcher-tabs reveal justify-center">
-                <button class="tab-btn active">Film</button>
-                <button class="tab-btn">TV Pilot</button>
-                <button class="tab-btn">Stage Play</button>
-                <button class="tab-btn">Web Series</button>
-            </div>
-            <div class="format-preview card reveal">
-                <div class="grid grid-2 items-center">
-                    <div class="preview-text p-8">
-                        <h3 id="format-title">Feature Film Format</h3>
-                        <p id="format-desc" class="mb-6">The standard 12pt Courier structure used by all major studios.
-                            Includes proper scene headings, dialogue spacing, and transition alignment.</p>
-                        <ul class="feature-list" id="format-list">
-                            <li><i class="fas fa-check"></i> Standard Courier Prime Font</li>
-                            <li><i class="fas fa-check"></i> 1.5" Left Margin for binding</li>
-                            <li><i class="fas fa-check"></i> 1 Page = 1 Minute of screen time</li>
-                        </ul>
-                    </div>
-                    <div class="preview-image">
-                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80"
-                            alt="Screenplay Page" class="rounded-lg shadow-md">
+        <section class="format-switcher section-padding mt-12">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h2 class="section-title reveal">One Tool for Every Stage</h2>
+                </div>
+                <div class="format-switcher-tabs reveal justify-center">
+                    <button class="tab-btn active">Film</button>
+                    <button class="tab-btn">TV Pilot</button>
+                    <button class="tab-btn">Stage Play</button>
+                    <button class="tab-btn">Web Series</button>
+                </div>
+                <div class="format-preview card reveal">
+                    <div class="grid grid-2 items-center">
+                        <div class="preview-text p-8 text-left">
+                            <h3 id="format-title">Feature Film Format</h3>
+                            <p id="format-desc" class="mb-6">The standard 12pt Courier structure used by all major
+                                studios.
+                                Includes proper scene headings, dialogue spacing, and transition alignment.</p>
+                            <ul class="feature-list" id="format-list">
+                                <li><i class="fas fa-check"></i> Standard Courier Prime Font</li>
+                                <li><i class="fas fa-check"></i> 1.5" Left Margin for binding</li>
+                                <li><i class="fas fa-check"></i> 1 Page = 1 Minute of screen time</li>
+                            </ul>
+                        </div>
+                        <div class="preview-image">
+                            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80"
+                                alt="Screenplay Page" class="rounded-lg shadow-md">
+                        </div>
                     </div>
                 </div>
             </div>

@@ -54,6 +54,8 @@
     --space-4: 34px;
     --space-5: 55px;
     --space-6: 89px;
+    --space-7: 144px;
+    --space-8: 233px;
 }
 
 :root.dark {
@@ -176,6 +178,11 @@ a {
 
     .d-none-mobile {
         display: none !important;
+    }
+
+    .comparison-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -434,11 +441,7 @@ nav a:hover {
     color: var(--color-primary);
 }
 
-@media (max-width: 1024px) {
-    nav {
-        /* No specific overrides needed for nav container, flex-wrap handles distinct rows */
-    }
-}
+@media (max-width: 1024px) {}
 
 .logo {
     display: flex;
@@ -1078,6 +1081,41 @@ section {
 @media (max-width: 480px) {
     .container {
         padding: 0 var(--space-2);
+    }
+}
+
+/* PRICING PAGE SPECIFIC */
+.pricing-hero {
+    padding-top: 140px;
+    padding-bottom: var(--space-6);
+    background-color: var(--background-primary);
+}
+
+.pricing-header {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pricing-header h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+    line-height: 1.1;
+}
+
+@media (max-width: 1024px) {
+    .pricing-hero {
+        padding-top: 100px;
+        padding-bottom: var(--space-4);
+    }
+
+    .pricing-header h1 {
+        font-size: 2.5rem !important;
+    }
+
+    .pricing-cards {
+        gap: var(--space-3);
     }
 }
 
@@ -3130,5 +3168,13 @@ section:last-child {
     .nav-actions .btn-theme {
         width: 36px;
         height: 36px;
+    }
+
+    .pricing-cards .card {
+        padding: 30px 20px;
+    }
+
+    .price {
+        font-size: 2.5rem;
     }
 }
