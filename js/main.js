@@ -37,11 +37,31 @@ initTheme();
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const navLinks = document.querySelector('.nav-links');
 
-if (mobileMenuBtn) {
+const setHeaderHeight = () => {
+    const header = document.querySelector('header');
+    if (header) {
+        document.documentElement.style.setProperty('--header-height', header.getBoundingClientRect().height + 'px');
+    }
+};
+
+if (mobileMenuBtn && navLinks) {
     mobileMenuBtn.addEventListener('click', () => {
+        setHeaderHeight();
         navLinks.classList.toggle('show');
     });
 }
+
+// Update header height on resize
+window.addEventListener('resize', () => {
+    setHeaderHeight();
+    if (navLinks && navLinks.classList.contains('show')) {
+        navLinks.classList.remove('show');
+    }
+});
+
+// Set on initial load
+document.addEventListener('DOMContentLoaded', setHeaderHeight);
+
 
 // Scroll Effect Header
 window.addEventListener('scroll', () => {
