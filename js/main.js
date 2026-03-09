@@ -2,22 +2,24 @@
 const darkModeToggle = document.getElementById('darkModeToggle');
 const htmlElement = document.documentElement;
 
+const updateThemeIcon = (isDark) => {
+    if (darkModeToggle) {
+        const icon = darkModeToggle.querySelector('i');
+        if (icon) {
+            if (isDark) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+    }
+};
+
 const initTheme = () => {
     const currentMode = localStorage.getItem('theme') || 'light';
     if (currentMode === 'dark') {
         htmlElement.classList.add('dark');
         updateThemeIcon(true);
-    }
-};
-
-const updateThemeIcon = (isDark) => {
-    if (darkModeToggle) {
-        const icon = darkModeToggle.querySelector('i');
-        if (isDark) {
-            icon.classList.replace('fa-moon', 'fa-sun');
-        } else {
-            icon.classList.replace('fa-sun', 'fa-moon');
-        }
     }
 };
 
@@ -33,47 +35,51 @@ if (darkModeToggle) {
 // Initialize theme on page load
 initTheme();
 
-// Mobile Menu
+// ─── Mobile Menu ───────────────────────────────────────────────────────────────
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const navLinks = document.querySelector('.nav-links');
 
-const setHeaderHeight = () => {
-    const header = document.querySelector('header');
-    if (header) {
-        document.documentElement.style.setProperty('--header-height', header.getBoundingClientRect().height + 'px');
-    }
-};
-
 if (mobileMenuBtn && navLinks) {
     mobileMenuBtn.addEventListener('click', () => {
-        setHeaderHeight();
-        navLinks.classList.toggle('show');
+        const isOpen = navLinks.classList.toggle('show');
+        const icon = mobileMenuBtn.querySelector('i');
+        if (icon) {
+            icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+        }
+    });
+
+    // Close menu when any nav link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) icon.className = 'fas fa-bars';
+        });
+    });
+
+    // Close on resize back to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+            navLinks.classList.remove('show');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) icon.className = 'fas fa-bars';
+        }
     });
 }
 
-// Update header height on resize
-window.addEventListener('resize', () => {
-    setHeaderHeight();
-    if (navLinks && navLinks.classList.contains('show')) {
-        navLinks.classList.remove('show');
-    }
-});
-
-// Set on initial load
-document.addEventListener('DOMContentLoaded', setHeaderHeight);
-
-
-// Scroll Effect Header
+// ─── Scroll Effect Header ──────────────────────────────────────────────────────
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+    if (header) {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     }
 });
 
-// Reveal animations on scroll
+// ─── Reveal animations on scroll ──────────────────────────────────────────────
 const reveal = () => {
     const reveals = document.querySelectorAll('.reveal');
     for (let i = 0; i < reveals.length; i++) {
@@ -94,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     reveal();
 });
 
-// Typewriter Effect (Simplified for index.html)
+// ─── Typewriter Effect ─────────────────────────────────────────────────────────
 const typeEffect = (element, text, speed) => {
     let i = 0;
     const typing = setInterval(() => {

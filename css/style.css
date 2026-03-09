@@ -414,7 +414,19 @@ header {
     z-index: 1000;
     backdrop-filter: blur(10px);
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    overflow: visible;
+}
+
+/* On mobile, remove backdrop-filter to eliminate stacking context that clips dropdown */
+@media (max-width: 1024px) {
+    header {
+        backdrop-filter: none;
+        background: #FFFBF5;
+    }
+
+    :root.dark header {
+        background: #1A1A1A;
+        backdrop-filter: none;
+    }
 }
 
 :root.dark header {
@@ -426,7 +438,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    flex-wrap: wrap;
 }
 
 /* Nav Links - Adapted for Light/Dark */
@@ -533,40 +545,36 @@ nav a:hover {
         z-index: 1001;
     }
 
+    /* nav wraps so menu appears on its own row below logo+actions */
+    nav {
+        align-items: flex-start;
+    }
+
+    /* Collapsed by default — expands via max-height when .show is added */
     .nav-links {
         display: flex;
         flex-direction: column;
-        width: 100vw;
-        position: fixed;
-        top: var(--header-height, 64px);
-        left: 0;
+        width: 100%;
+        order: 10;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
         background: var(--background-card);
-        padding: 6px 0 10px;
-        border-top: 1px solid var(--border-color);
-        box-shadow: var(--shadow-md);
-        text-align: center;
         gap: 0;
-        align-items: stretch;
-
-        /* Visibility setup for animation */
-        visibility: hidden;
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-6px);
-        transition: all 0.25s ease;
-        z-index: 1002;
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
 
     :root.dark .nav-links {
         background: var(--background-secondary);
-        border-top: 1px solid #444;
     }
 
+    /* When toggled open */
     .nav-links.show {
-        visibility: visible;
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
+        max-height: 500px;
+        border-top: 2px solid var(--color-primary);
+        border-bottom: 1px solid var(--border-color);
     }
 
     .nav-links li {
@@ -576,23 +584,40 @@ nav a:hover {
     }
 
     .nav-links a {
-        display: block;
+        display: block !important;
         width: 100%;
-        padding: 12px 24px;
+        padding: 13px 20px;
         font-size: 1rem;
         font-weight: 500;
         text-align: center;
         border-bottom: 1px solid var(--border-color);
+        border-radius: 0;
+        color: var(--text-primary);
+    }
+
+    :root.dark .nav-links a {
+        border-bottom-color: #444;
     }
 
     .nav-links li:last-child a {
         border-bottom: none;
     }
 
-    /* Adjust nav actions to stay on the right */
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: var(--color-primary);
+        background: rgba(139, 21, 56, 0.06);
+    }
+
+    :root.dark .nav-links a:hover,
+    :root.dark .nav-links a.active {
+        color: var(--color-secondary);
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Adjust nav actions */
     .nav-actions {
         margin-left: auto;
-        /* Push to right if logo is on left */
         gap: var(--space-2);
     }
 
@@ -601,6 +626,7 @@ nav a:hover {
         padding: 8px 16px;
     }
 }
+
 
 /* HERO CINEMATIC */
 .hero-cinematic {
