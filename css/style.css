@@ -623,8 +623,8 @@ nav a:hover {
 
 @media (max-width: 1024px) {
     .hero-cinematic {
-        padding-top: 80px;
-        /* Increased for mobile */
+        padding-top: 130px !important;
+        /* Increased for mobile/tablet */
         min-height: 100vh;
     }
 }
@@ -1086,7 +1086,7 @@ section {
 
 /* PRICING PAGE SPECIFIC */
 .pricing-hero {
-    padding-top: 140px;
+    padding-top: 160px !important;
     padding-bottom: var(--space-6);
     background-color: var(--background-primary);
 }
@@ -1106,7 +1106,7 @@ section {
 
 @media (max-width: 1024px) {
     .pricing-hero {
-        padding-top: 100px;
+        padding-top: 130px !important;
         padding-bottom: var(--space-4);
     }
 
@@ -1997,7 +1997,8 @@ section:last-child {
 
     .feature-hero,
     .template-hero {
-        padding: var(--space-8) 0 var(--space-6);
+        padding-top: 130px !important;
+        padding-bottom: var(--space-6);
     }
 
     .cta-bottom {
